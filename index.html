@@ -285,6 +285,12 @@
             justify-content: center;
             position: relative;
             overflow: hidden;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .avatar-placeholder:hover {
+            transform: scale(1.05);
         }
 
         .avatar-placeholder img {
@@ -326,10 +332,13 @@
                 <span>Plantixia</span>
             </a>
             <div class="nav-links">
-                <a href="#about" data-t="nav_about">À Propos</a>
-                <a href="#features" data-t="nav_features">Fonctionnalités</a>
-                <a href="#team" data-t="nav_team">Équipe</a>
-                <a href="#contact" class="btn-sm" data-t="btn_contact">Nous Contacter</a>
+                <a href="#vision">Vision</a>
+                <a href="#problem">L'Enjeu</a>
+                <a href="#tech">Technologie</a>
+                <a href="#benefits">Avantages</a>
+                <a href="#features">Fonctionnalités</a>
+                <a href="#roadmap">Roadmap</a>
+                <a href="#contact" class="btn-sm">Pitch Deck</a>
             </div>
         </div>
     </nav>
@@ -357,20 +366,91 @@
             </div>
         </section>
 
-        <!-- Stats -->
-        <section id="about" class="container" style="background: rgba(16, 185, 129, 0.02); border-radius: 64px;">
+        <!-- Stats / Vision -->
+        <section id="vision" class="container" style="background: rgba(16, 185, 129, 0.02); border-radius: 64px;">
             <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 4rem; text-align: center;">
                 <div class="reveal">
                     <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);">98%</h3>
                     <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Précision IA</p>
                 </div>
                 <div class="reveal">
-                    <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);">200+</h3>
-                    <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Cultures</p>
+                    <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);">40%</h3>
+                    <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Pertes Évitées</p>
                 </div>
                 <div class="reveal">
                     <h3 style="font-size: 3rem; font-weight: 800; color: var(--primary);">< 3s</h3>
                     <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">Diagnostic</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Problem Section -->
+        <section id="problem" class="container">
+            <div class="hero-grid">
+                <div class="reveal">
+                    <h2 style="font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 2rem;">L'enjeu de la <span>Sécurité Alimentaire</span>.</h2>
+                    <p style="margin-bottom: 1.5rem;">Chaque année, plus de **40% des récoltes mondiales** sont détruites par des parasites et des maladies, menaçant la subsistance de millions de familles.</p>
+                    <p style="color: var(--text-dim);">Plantixia répond à cette urgence en démocratisant l'accès à l'expertise agronomique de pointe, là où les infrastructures traditionnelles font défaut.</p>
+                </div>
+                <div class="reveal card" style="background: rgba(239, 68, 68, 0.05); border-color: rgba(239, 68, 68, 0.2);">
+                    <i data-lucide="alert-triangle" style="color: #EF4444; width: 48px; height: 48px; margin-bottom: 1.5rem;"></i>
+                    <h4 style="font-size: 1.5rem; margin-bottom: 1rem;">Le fossé technologique</h4>
+                    <p style="font-size: 0.95rem;">La majorité des agriculteurs dans les zones émergentes n'ont pas accès à un expert en temps réel. Nous transformons chaque smartphone en un laboratoire ambulant.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tech Excellence -->
+        <section id="tech" class="container" style="position: relative;">
+            <div class="section-header reveal">
+                <h2>Excellence <span>Technologique</span></h2>
+                <p>Une architecture multi-moteurs unique pour une fiabilité inégalée.</p>
+            </div>
+            <div class="grid-features">
+                <div class="card reveal">
+                    <div class="icon-box" style="background: rgba(99, 102, 241, 0.1); color: #6366F1;"><i data-lucide="cpu"></i></div>
+                    <h3>Triple Engine IA</h3>
+                    <p>Nous fusionnons les analyses de Gemini 1.5, GPT-4o et DeepSeek pour éliminer les faux positifs et garantir un diagnostic précis à 98%.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="icon-box" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B;"><i data-lucide="database"></i></div>
+                    <h3>Big Data Agricole</h3>
+                    <p>Notre base de données propriétaire apprend de chaque scan, permettant une détection prédictive des épidémies régionales.</p>
+                </div>
+                <div class="card reveal">
+                    <div class="icon-box" style="background: rgba(16, 185, 129, 0.1); color: var(--primary);"><i data-lucide="layers"></i></div>
+                    <h3>Scalabilité Cloud</h3>
+                    <p>Une infrastructure légère et ultra-rapide capable de supporter des millions d'utilisateurs avec une latence minimale.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section id="benefits" class="container">
+            <div class="section-header reveal">
+                <h2>Pourquoi <span>Plantixia</span> ?</h2>
+                <p>Des bénéfices tangibles pour transformer l'agriculture.</p>
+            </div>
+            <div class="grid-features">
+                <div class="reveal" style="text-align: center; padding: 1.5rem;">
+                    <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i data-lucide="zap"></i></div>
+                    <h4>Gain de Temps</h4>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Obtenez un diagnostic en quelques secondes, sans attendre la visite d'un expert sur le terrain.</p>
+                </div>
+                <div class="reveal" style="text-align: center; padding: 1.5rem;">
+                    <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i data-lucide="trending-down"></i></div>
+                    <h4>Réduction des Coûts</h4>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Évitez l'achat de produits inadaptés en identifiant avec précision la source du problème.</p>
+                </div>
+                <div class="reveal" style="text-align: center; padding: 1.5rem;">
+                    <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i data-lucide="shield-check"></i></div>
+                    <h4>Sécurité des Récoltes</h4>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Anticipez les épidémies grâce aux alertes communautaires et protégez vos rendements.</p>
+                </div>
+                <div class="reveal" style="text-align: center; padding: 1.5rem;">
+                    <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i data-lucide="languages"></i></div>
+                    <h4>Proximité Locale</h4>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Une interface intuitive disponible en langues locales pour une accessibilité totale.</p>
                 </div>
             </div>
         </section>
@@ -432,7 +512,39 @@
             </div>
         </section>
 
-        <!-- Team -->
+        <!-- Roadmap -->
+        <section id="roadmap" class="container">
+            <div class="section-header reveal">
+                <h2>Notre <span>Trajectoire</span></h2>
+                <p>De la détection à l'écosystème agricole complet.</p>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 2rem;">
+                <div class="card reveal" style="display: flex; flex-direction: row; align-items: center; gap: 2rem; padding: 1.5rem;">
+                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">2024</div>
+                    <div style="flex: 1;">
+                        <h4 style="margin-bottom: 0.5rem;">Phase 1 : Diagnostic & Communauté</h4>
+                        <p style="color: var(--text-dim); font-size: 0.9rem;">Demarrage de la conception de la premiere version de l'application.</p>
+                    </div>
+                    <i data-lucide="check-circle" style="color: var(--primary);"></i>
+                </div>
+                <div class="card reveal" style="display: flex; flex-direction: row; align-items: center; gap: 2rem; padding: 1.5rem; border-color: var(--primary);">
+                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--primary);">2025</div>
+                    <div style="flex: 1;">
+                        <h4 style="margin-bottom: 0.5rem;">Phase 2 : IoT & Intelligence Prédictive</h4>
+                        <p style="color: var(--text-dim); font-size: 0.9rem;">Intégration de capteurs de sol connectés et analyse de données satellites pour la prévention.</p>
+                    </div>
+                    <i data-lucide="arrow-right-circle" style="color: var(--primary);"></i>
+                </div>
+                <div class="card reveal" style="display: flex; flex-direction: row; align-items: center; gap: 2rem; padding: 1.5rem; opacity: 0.7;">
+                    <div style="font-size: 1.5rem; font-weight: 800; color: var(--text-dim);">2026</div>
+                    <div style="flex: 1;">
+                        <h4 style="margin-bottom: 0.5rem;">Phase 3 : Écosystème de Crédit & Marketplace</h4>
+                        <p style="color: var(--text-dim); font-size: 0.9rem;">Faciliter l'accès aux intrants de qualité et au micro-financement basé sur le score de santé des cultures.</p>
+                    </div>
+                    <i data-lucide="circle" style="color: var(--text-dim);"></i>
+                </div>
+            </div>
+        </section>
         <section id="team" class="container">
             <div class="section-header reveal">
                 <h2 data-t="team_title">L'Équipe</h2>
@@ -466,21 +578,55 @@
             </div>
         </section>
 
-        <!-- Contact -->
-        <section id="contact" class="container" style="text-align: center;">
-            <div class="reveal">
-                <h2 style="font-size: 3rem; margin-bottom: 2rem;">Prêt à collaborer ?</h2>
-                <p style="color: var(--text-dim); margin-bottom: 3rem;">Nous recherchons des partenaires et investisseurs pour étendre notre impact.</p>
-                <a href="mailto:dylankavundama@gmail.com" class="btn-sm" style="padding: 1.25rem 3rem; font-size: 1.1rem;">Envoyer un Email</a>
-            </div>
-        </section>
     </main>
-
-    <footer style="padding: 4rem 0; border-top: 1px solid var(--border); text-align: center; color: var(--text-dim); font-size: 0.9rem;">
+    
+    <!-- Footer -->
+    <footer id="contact" style="padding: 6rem 0 3rem; border-top: 1px solid var(--border); background: rgba(2,6,23,0.5);">
         <div class="container">
-            <p>&copy; 2026 Plantixia. Tous droits réservés.</p>
+            <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 3rem;">
+                <div class="reveal">
+                    <h2 style="margin-bottom: 1.5rem; font-size: clamp(2rem, 5vw, 3rem);">Prêt à <span>cultiver le futur</span> ?</h2>
+                    <p style="color: var(--text-dim); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">Rejoignez des milliers d'agriculteurs qui protègent déjà leurs récoltes avec l'intelligence de Plantixia.</p>
+                    <div style="display: flex; gap: 1.5rem; flex-wrap: wrap; justify-content: center;">
+                        <a href="#" class="btn-sm" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.1); text-decoration: none;">
+                            <i data-lucide="apple" style="width: 24px; height: 24px;"></i>
+                            <div style="text-align: left;">
+                                <div style="font-size: 0.6rem; opacity: 0.7; text-transform: uppercase;">Disponible sur</div>
+                                <div style="font-size: 1rem; font-weight: 800; line-height: 1;">App Store</div>
+                            </div>
+                        </a>
+                        <a href="#" class="btn-sm" style="display: flex; align-items: center; gap: 0.75rem; padding: 0.8rem 1.5rem; background: #000; border: 1px solid rgba(255,255,255,0.1); text-decoration: none;">
+                            <i data-lucide="play" style="width: 24px; height: 24px;"></i>
+                            <div style="text-align: left;">
+                                <div style="font-size: 0.6rem; opacity: 0.7; text-transform: uppercase;">Disponible sur</div>
+                                <div style="font-size: 1rem; font-weight: 800; line-height: 1;">Google Play</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <a href="mailto:dylankavundama@gmail.com" style="color: var(--primary); text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem; justify-content: center;">
+                            <i data-lucide="mail"></i> Nous Contacter
+                        </a>
+                    </div>
+                </div>
+                
+                <div style="width: 100%; height: 1px; background: var(--border);"></div>
+                
+                <div style="color: var(--text-dim); font-size: 0.9rem;">
+                    <p>&copy; 2026 Plantixia. Tous droits réservés.</p>
+                    <p style="margin-top: 0.75rem; font-weight: 700; color: var(--primary); letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.75rem;">Propulsé par Next Byte Technology</p>
+                </div>
+            </div>
         </div>
     </footer>
+    
+    <!-- Image Preview Modal -->
+    <div id="image-modal" style="display:none; position:fixed; inset:0; background:rgba(2,6,23,0.95); z-index:2000; align-items:center; justify-content:center; padding:2rem; backdrop-filter: blur(10px); cursor: zoom-out;" onclick="closeModal()">
+        <img id="modal-img" src="" style="max-width:min(90%, 800px); max-height:85vh; border-radius:24px; border: 1px solid var(--border); box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);">
+        <button style="position:fixed; top:2rem; right:2rem; background:rgba(255,255,255,0.1); border:none; color:white; width:48px; height:48px; border-radius:50%; display:flex; align-items:center; justify-content:center; cursor:pointer; backdrop-filter: blur(5px);">
+            <i data-lucide="x"></i>
+        </button>
+    </div>
 
     <script>
         lucide.createIcons();
@@ -509,6 +655,33 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Image Modal Logic
+        function openModal(imgSrc) {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.src = imgSrc;
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modalImg.style.transform = 'scale(1)';
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent scroll
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('image-modal');
+            const modalImg = document.getElementById('modal-img');
+            modalImg.style.transform = 'scale(0.9)';
+            setTimeout(() => {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }, 300);
+        }
+
+        // Add click events to avatars
+        document.querySelectorAll('.avatar-placeholder img').forEach(img => {
+            img.parentElement.addEventListener('click', () => openModal(img.src));
         });
     </script>
 </body>
