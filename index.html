@@ -287,11 +287,21 @@
             overflow: hidden;
         }
 
+        .avatar-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: relative;
+            z-index: 1;
+        }
+
         .avatar-placeholder::after {
             content: '';
             position: absolute;
             inset: 0;
             background: radial-gradient(circle at 30% 30%, rgba(16,185,129,0.2), transparent);
+            z-index: 2;
+            pointer-events: none;
         }
 
         /* --- Responsive --- */
@@ -430,16 +440,20 @@
             </div>
             <div class="team-grid">
                 <div class="member-card reveal">
-                    <div class="avatar-placeholder"><i data-lucide="user" style="width: 60px; height: 60px; color: var(--text-dim);"></i></div>
+                    <div class="avatar-placeholder">
+                        <img src="https://media.licdn.com/dms/image/v2/D4D03AQFtldOG8kv31g/profile-displayphoto-shrink_800_800/B4DZSiGxQ9GcAc-/0/1737886473281?e=1779926400&v=beta&t=7lC-bWlbE73Vg18-VAtAI6TZDzv-YQdo8XJJT5PJxRE" alt="Dylan Kavundama">
+                    </div>
                     <h3>Dylan Kavundama</h3>
                     <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Ingénieur IT & Fullstack</p>
                     <p style="color: var(--text-dim); font-size: 0.9rem;">Expert en architecture mobile et cloud.</p>
                 </div>
                 <div class="member-card reveal">
-                    <div class="avatar-placeholder"><i data-lucide="user" style="width: 60px; height: 60px; color: var(--text-dim);"></i></div>
+                    <div class="avatar-placeholder">
+                        <img src="https://prudentmig-portfolio.web.app/assets/img/1.jpg" alt="Prudent Migabo">
+                    </div>
                     <h3>Prudent Migabo</h3>
-                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Ingénieur IA & Cyber</p>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Spécialiste des modèles prédictifs.</p>
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Deleloppeur Mobile</p>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;">Spécialiste des modèles prédictifs basés sur l'IA.</p>
                 </div>
                 <div class="member-card reveal">
                     <div class="avatar-placeholder"><i data-lucide="user" style="width: 60px; height: 60px; color: var(--text-dim);"></i></div>
