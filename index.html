@@ -1201,42 +1201,36 @@
             text-align: center;
             padding: 2rem;
         }
-
         .avatar-placeholder {
-            width: 180px;
-            height: 180px;
-            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
-            border: 2px solid var(--border);
-            border-radius: 40px;
-            margin: 0 auto 2rem;
+            width: 170px;
+            height: 170px;
+            background: #0f172a;
+            border: 3px solid rgba(16, 185, 129, 0.35);
+            border-radius: 50%;
+            margin: 0 auto 1.75rem;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
             cursor: pointer;
-            transition: transform 0.3s ease;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+            transition: transform 0.35s cubic-bezier(0.2, 1, 0.3, 1), border-color 0.3s ease, box-shadow 0.35s ease;
         }
 
         .avatar-placeholder:hover {
-            transform: scale(1.05);
+            transform: translateY(-6px) scale(1.04);
+            border-color: var(--primary);
+            box-shadow: 0 16px 36px rgba(16, 185, 129, 0.3);
         }
 
         .avatar-placeholder img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            position: relative;
-            z-index: 1;
-        }
-
-        .avatar-placeholder::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 30% 30%, rgba(16, 185, 129, 0.2), transparent);
-            z-index: 2;
-            pointer-events: none;
+            object-position: center;
+            display: block;
+            border-radius: 50%;
         }
 
         /* --- Responsive --- */
@@ -1388,9 +1382,9 @@
             }
 
             .avatar-placeholder {
-                width: min(160px, 55vw);
-                height: min(160px, 55vw);
-                border-radius: 28px;
+                width: min(150px, 50vw);
+                height: min(150px, 50vw);
+                border-radius: 50%;
             }
 
             .mockup-container {
@@ -1409,7 +1403,6 @@
                 text-align: center;
             }
         }
-
         @media (max-width: 480px) {
             .hero h1 {
                 font-size: 1.85rem;
@@ -1916,7 +1909,7 @@
             <div class="team-grid">
                 <div class="member-card reveal">
                     <div class="avatar-placeholder">
-                        <img src="equipe/delphin.jpg" alt="Delphin Makasi">
+                        <img src="equipe/delphin.png" alt="Delphin Makasi">
                     </div>
                     <h3>Delphin Makasi</h3>
                     <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;" data-i18n="team_1_role">Ingénieur Agronome</p>
@@ -1933,7 +1926,7 @@
                 </div>
                 <div class="member-card reveal">
                     <div class="avatar-placeholder">
-                        <img src="equipe/dylan.jpg"
+                        <img src="equipe/dylan.png"
                             alt="Dylan Kavundama">
                     </div>
                     <h3>Dylan Kavundama</h3>
