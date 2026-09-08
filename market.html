@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market | Plantixia - Boutiques & Pharmacies Agricoles</title>
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --secondary: #F59E0B;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.4);
+            --text: #F8FAFC;
+            --text-dim: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent-gradient: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+
+        :root[data-theme="light"] {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-dim: #64748b;
+            --border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.25rem 0;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.8);
+            -webkit-backdrop-filter: blur(16px);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        [data-theme="light"] nav {
+            background: rgba(248, 250, 252, 0.8);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.9;
+        }
+
+        .logo-img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
+            filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.35));
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-sm {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .theme-btn,
+        .lang-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .theme-btn:hover,
+        .lang-btn:hover {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+        }
+
+        /* --- Market Header --- */
+        .market-hero {
+            padding-top: 140px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .market-hero h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .market-hero h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .market-hero p {
+            color: var(--text-dim);
+            max-width: 600px;
+            margin: 0 auto 2rem;
+        }
+
+        /* --- Smart Search Bar --- */
+        .search-container {
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            position: relative;
+            z-index: 10;
+        }
+
+        .search-box {
+            position: relative;
+            display: flex;
+            align-items: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 0.5rem 0.5rem 0.5rem 1.5rem;
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.3);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        [data-theme="light"] .search-box {
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+        }
+
+        .search-box:focus-within {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.2);
+        }
+
+        .search-input {
+            flex: 1;
+            background: transparent;
+            border: none;
+            outline: none;
+            color: var(--text);
+            font-size: 1.1rem;
+            padding: 0.5rem 0;
+        }
+
+        .search-input::placeholder {
+            color: var(--text-dim);
+        }
+
+        .search-icon {
+            color: var(--primary);
+            margin-right: 1rem;
+        }
+
+        .search-btn {
+            background: var(--accent-gradient);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.8rem;
+            border-radius: 15px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .search-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* --- Tags --- */
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-top: 1rem;
+        }
+
+        .tag-btn {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            border: 1px solid rgba(16, 185, 129, 0.2);
+            padding: 0.4rem 1rem;
+            border-radius: 100px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .tag-btn:hover, .tag-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+
+        /* --- Grid & Cards --- */
+        .shops-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(100%, 360px), 1fr));
+            gap: 2rem;
+            padding-bottom: 80px;
+        }
+
+        .shop-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shop-card:hover {
+            transform: translateY(-8px);
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 20px 40px -15px rgba(16, 185, 129, 0.1);
+        }
+
+        .shop-header {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+        }
+
+        .shop-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .shop-title-desc h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.25rem;
+        }
+
+        .shop-title-desc p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+        }
+
+        .shop-details {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            font-size: 0.9rem;
+            color: var(--text-dim);
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .detail-item i {
+            color: var(--primary);
+            width: 18px;
+            height: 18px;
+        }
+
+        .detail-item a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .detail-item a:hover {
+            color: var(--primary);
+        }
+
+        .shop-description {
+            font-size: 0.95rem;
+            color: var(--text-dim);
+            border-top: 1px solid var(--border);
+            padding-top: 1rem;
+        }
+
+        .shop-products {
+            margin-top: auto;
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            padding: 1rem;
+        }
+
+        [data-theme="light"] .shop-products {
+            background: #f1f5f9;
+        }
+
+        .products-title {
+            font-size: 0.8rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .products-list {
+            font-size: 0.85rem;
+            color: var(--text);
+        }
+
+        .highlight {
+            background: rgba(245, 158, 11, 0.3);
+            border-radius: 4px;
+            padding: 0 2px;
+            color: white;
+            font-weight: bold;
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 0;
+            background: rgba(2, 6, 23, 0.5);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* --- Loader / Empty State --- */
+        .loading-container, .empty-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+            gap: 1rem;
+            color: var(--text-dim);
+        }
+
+        .spinner {
+            border: 4px solid rgba(16, 185, 129, 0.1);
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border-left-color: var(--primary);
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        .map-btn {
+            background: rgba(239, 68, 68, 0.1);
+            color: #EF4444;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+            border-radius: 12px;
+            padding: 0.5rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s;
+            margin-top: 0.5rem;
+        }
+
+        .map-btn:hover {
+            background: #EF4444;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Plantixia Logo" class="logo-img">
+                <span>Plantixia</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav_home">Accueil</a>
+                <a href="index.html#vision" data-i18n="nav_vision">Vision</a>
+                <a href="index.html#features" data-i18n="nav_features">Fonctionnalités</a>
+                <a href="#" style="color: var(--primary); font-weight: 700;">Market</a>
+        
+                <a href="index.html#download" class="btn-sm" data-i18n="nav_download">Télécharger</a>
+            </div>
+            <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()" title="Changer le thème"></button>
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()" title="Changer la langue" style="font-weight: 700; font-size: 0.8rem;">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="market-hero">
+            <h1 data-i18n="market_title">Market <span>Agricole</span></h1>
+            <p data-i18n="market_desc">Trouvez des pharmacies et boutiques spécialisées pour vous ravitailler en engrais, pesticides et produits de traitement agronomique.</p>
+        </header>
+
+        <section class="search-container">
+            <div class="search-box">
+                <i data-lucide="search" class="search-icon"></i>
+                <input type="text" id="search-input" class="search-input" placeholder="Rechercher un produit, maladie, ville..." oninput="onSearch()">
+                <button class="search-btn" onclick="onSearch()" data-i18n="search_btn">Rechercher</button>
+            </div>
+            <div class="tags-container">
+                <button class="tag-btn active" onclick="filterByTag('', this)">Tout</button>
+                <button class="tag-btn" onclick="filterByTag('Engrais', this)">Engrais</button>
+                <button class="tag-btn" onclick="filterByTag('Pesticide', this)">Pesticides</button>
+                <button class="tag-btn" onclick="filterByTag('Fongicide', this)">Fongicides</button>
+                <button class="tag-btn" onclick="filterByTag('Graine', this)">Semences</button>
+                <button class="tag-btn" onclick="filterByTag('Mildiou', this)">Mildiou</button>
+                <button class="tag-btn" onclick="filterByTag('Insecticide', this)">Insecticides</button>
+            </div>
+        </section>
+
+        <div id="loader" class="loading-container">
+            <div class="spinner"></div>
+            <p data-i18n="loading">Chargement des boutiques partenaires...</p>
+        </div>
+
+        <div id="empty-state" class="empty-container" style="display: none;">
+            <i data-lucide="store" style="width: 64px; height: 64px;"></i>
+            <p data-i18n="no_shops">Aucune boutique ne correspond à votre recherche.</p>
+        </div>
+
+        <section id="shops-list" class="shops-grid" style="display: none;">
+            <!-- Dynamic shops cards will be rendered here -->
+        </section>
+    </main>
+
+    <footer data-i18n="ftr_rights">
+        &copy; 2026 Plantixia. Tous droits réservés.
+    </footer>
+
+    <script>
+        const translations = {
+            fr: {
+                nav_home: "Accueil",
+                nav_vision: "Vision",
+                nav_features: "Fonctionnalités",
+                nav_download: "Télécharger",
+                market_title: "Market <span>Agricole</span>",
+                market_desc: "Trouvez des pharmacies et boutiques spécialisées pour vous ravitailler en engrais, pesticides et produits de traitement agronomique.",
+                search_btn: "Rechercher",
+                loading: "Chargement des boutiques partenaires...",
+                no_shops: "Aucune boutique ne correspond à votre recherche.",
+                ftr_rights: "&copy; 2026 Plantixia. Tous droits réservés.",
+                contact: "Contact :",
+                products: "Produits disponibles :"
+            },
+            en: {
+                nav_home: "Home",
+                nav_vision: "Vision",
+                nav_features: "Features",
+                nav_download: "Download",
+                market_title: "Agricultural <span>Market</span>",
+                market_desc: "Find specialized pharmacies and stores to stock up on fertilizers, pesticides, and agronomic treatment products.",
+                search_btn: "Search",
+                loading: "Loading partner stores...",
+                no_shops: "No stores match your search query.",
+                ftr_rights: "&copy; 2026 Plantixia. All rights reserved.",
+                contact: "Contact:",
+                products: "Available Products:"
+            }
+        };
+
+        let currentLang = localStorage.getItem('plantixia_lang') || 'fr';
+        let currentTheme = localStorage.getItem('plantixia_theme') || 'dark';
+        let allShops = [];
+        let activeTag = '';
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('theme-toggle').innerHTML = '<i data-lucide="moon"></i>';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                document.getElementById('theme-toggle').innerHTML = '<i data-lucide="sun"></i>';
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            currentTheme = theme;
+            localStorage.setItem('plantixia_theme', theme);
+        }
+
+        function toggleTheme() {
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        }
+
+        function applyLanguage(lang) {
+            const lt = document.getElementById('lang-toggle');
+            if (lt) lt.innerText = lang === 'fr' ? 'EN' : 'FR';
+            const els = document.querySelectorAll('[data-i18n]');
+            els.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            currentLang = lang;
+            localStorage.setItem('plantixia_lang', lang);
+            renderShops(); // Re-render to update dynamic labels
+        }
+
+        function toggleLanguage() {
+            applyLanguage(currentLang === 'fr' ? 'en' : 'fr');
+        }
+
+        // Fetch shops from backend API
+        async function fetchShops() {
+            try {
+                const response = await fetch('../admin/api/shops/list.php');
+                const result = await response.json();
+                if (result.status === 'success') {
+                    allShops = result.data;
+                } else {
+                    console.error("API error:", result.message);
+                }
+            } catch (e) {
+                console.error("Failed to fetch shops:", e);
+            } finally {
+                document.getElementById('loader').style.display = 'none';
+                renderShops();
+            }
+        }
+
+        // Smart Search and Highlighting Logic
+        function renderShops() {
+            const searchQuery = document.getElementById('search-input').value.toLowerCase().trim();
+            const shopsList = document.getElementById('shops-list');
+            const emptyState = document.getElementById('empty-state');
+            shopsList.innerHTML = '';
+
+            // Split search query into keywords for intelligent multi-match
+            const keywords = searchQuery.split(/\s+/).filter(k => k.length > 0);
+
+            const filtered = allShops.filter(shop => {
+                // Tag filter check
+                if (activeTag) {
+                    const tag = activeTag.toLowerCase();
+                    const desc = (shop.description || '').toLowerCase();
+                    const products = (shop.products_list || '').toLowerCase();
+                    if (!desc.includes(tag) && !products.includes(tag)) {
+                        return false;
+                    }
+                }
+
+                // Query keywords check
+                if (keywords.length === 0) return true;
+                
+                const shopName = shop.name.toLowerCase();
+                const shopAddress = shop.address.toLowerCase();
+                const shopDesc = (shop.description || '').toLowerCase();
+                const shopProducts = (shop.products_list || '').toLowerCase();
+                const shopCountry = shop.country.toLowerCase();
+
+                // Smart match: all keywords must match at least one of the fields
+                return keywords.every(kw => 
+                    shopName.includes(kw) || 
+                    shopAddress.includes(kw) || 
+                    shopDesc.includes(kw) || 
+                    shopProducts.includes(kw) ||
+                    shopCountry.includes(kw)
+                );
+            });
+
+            if (filtered.length === 0) {
+                emptyState.style.display = 'flex';
+                shopsList.style.display = 'none';
+            } else {
+                emptyState.style.display = 'none';
+                shopsList.style.display = 'grid';
+
+                filtered.forEach(shop => {
+                    const card = document.createElement('div');
+                    card.className = 'shop-card';
+
+                    // Highlight matched text helper
+                    const highlightText = (text) => {
+                        if (!text) return '';
+                        if (keywords.length === 0) return text;
+                        let highlighted = text;
+                        keywords.forEach(kw => {
+                            const regex = new RegExp(`(${kw.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&')})`, 'gi');
+                            highlighted = highlighted.replace(regex, '<span class="highlight">$1</span>');
+                        });
+                        return highlighted;
+                    };
+
+                    const nameH = highlightText(shop.name);
+                    const addressH = highlightText(shop.address);
+                    const descH = highlightText(shop.description || '');
+                    const productsH = highlightText(shop.products_list || '');
+                    const countryH = highlightText(shop.country);
+
+                    const locationBtn = (shop.latitude && shop.longitude) 
+                        ? `<a href="https://www.google.com/maps/search/?api=1&query=${shop.latitude},${shop.longitude}" target="_blank" class="map-btn">
+                            <i data-lucide="map-pin"></i> Itinéraire GPS
+                           </a>` 
+                        : '';
+
+                    card.innerHTML = `
+                        <div class="shop-header">
+                            <div class="shop-icon">
+                                <i data-lucide="store"></i>
+                            </div>
+                            <div class="shop-title-desc">
+                                <h3>${nameH}</h3>
+                                <p>${addressH}, ${countryH}</p>
+                            </div>
+                        </div>
+                        <div class="shop-details">
+                            <div class="detail-item">
+                                <i data-lucide="phone"></i>
+                                <a href="tel:${shop.contact}">${shop.contact}</a>
+                            </div>
+                        </div>
+                        ${descH ? `<p class="shop-description">${descH}</p>` : ''}
+                        ${productsH ? `
+                            <div class="shop-products">
+                                <div class="products-title">${translations[currentLang].products}</div>
+                                <div class="products-list">${productsH}</div>
+                            </div>
+                        ` : ''}
+                        ${locationBtn}
+                    `;
+                    shopsList.appendChild(card);
+                });
+            }
+
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+        }
+
+        function onSearch() {
+            renderShops();
+        }
+
+        function filterByTag(tag, element) {
+            activeTag = tag;
+            document.querySelectorAll('.tag-btn').forEach(btn => btn.classList.remove('active'));
+            element.classList.add('active');
+            renderShops();
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            applyTheme(currentTheme);
+            applyLanguage(currentLang);
+
+            // Handle pre-filled search query from URL parameters (e.g. ?search=mildiou)
+            const urlParams = new URLSearchParams(window.location.search);
+            const searchParam = urlParams.get('search');
+            if (searchParam) {
+                document.getElementById('search-input').value = searchParam;
+            }
+
+            fetchShops();
+        });
+    </script>
+</body>
+
+</html>

@@ -1,80 +1,160 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <title>Politique de confidentialité - PLANTIXIA</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de Confidentialité – Plantixia</title>
+  
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="apple-touch-icon" href="logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      max-width: 800px;
-      margin: auto;
-      padding: 20px;
-      line-height: 1.6;
-      color: #333;
+    :root {
+      --green: #10B981;
+      --dark: #0f172a;
+      --text: #334155;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
     }
-    h1, h2 {
-      color: #2c7a3f;
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+    header {
+      background: linear-gradient(135deg, #064e3b, var(--green));
+      color: white;
+      padding: 48px 24px 40px;
+      text-align: center;
+    }
+    header .logo { display: flex; justify-content: center; align-items: center; margin-bottom: 12px; }
+    header .logo-img { width: 56px; height: 56px; object-fit: contain; filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25)); }
+    header h1 { font-size: 1.8rem; font-weight: 800; margin-bottom: 6px; }
+    header p { font-size: 0.95rem; opacity: 0.9; }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px 60px;
+    }
+    .section {
+      background: var(--card);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin-bottom: 20px;
+      border: 1px solid var(--border);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .section h2 {
+      color: var(--green);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section h2 .icon { font-size: 1.3rem; }
+    .section p, .section li {
+      font-size: 0.95rem;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    .section ul { padding-left: 20px; }
+    .last-update {
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      margin-bottom: 32px;
+    }
+    footer {
+      text-align: center;
+      padding: 24px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+      border-top: 1px solid var(--border);
+    }
+    footer a {
+      color: var(--green);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
-
 <body>
 
-<h1>Politique de confidentialité</h1>
+<header>
+  <div class="logo"><a href="index.html" style="display:inline-block;"><img src="logo.png" alt="Plantixia Logo" class="logo-img"></a></div>
+  <h1>Politique de Confidentialité</h1>
+  <p>Plantixia – Protection &amp; Traitement de vos données</p>
+</header>
 
-<p><strong>Dernière mise à jour :</strong> Le 08 avril 2026</p>
+<div class="container">
+  <p class="last-update">Dernière mise à jour : Le 08 avril 2026</p>
 
-<p>
-PLANTIXIA est une application mobile conçue pour aider les agriculteurs à diagnostiquer les maladies des plantes et améliorer leurs récoltes grâce à l’intelligence artificielle.
-</p>
+  <div class="section">
+    <h2><span class="icon">🌿</span> Introduction</h2>
+    <p>PLANTIXIA est une application mobile conçue pour aider les agriculteurs à diagnostiquer les maladies des plantes et améliorer leurs récoltes grâce à l’intelligence artificielle. La protection de votre vie privée et de vos données personnelles est au cœur de nos engagements.</p>
+  </div>
 
-<h2>1. Données collectées</h2>
+  <div class="section">
+    <h2><span class="icon">📊</span> 1. Données collectées</h2>
+    <ul>
+      <li><strong>Nom</strong> : utilisé pour personnaliser l’expérience utilisateur (si fourni lors de l’inscription)</li>
+      <li><strong>Coordonnées de l’utilisateur</strong> : telles que adresse e-mail et autres informations de contact fournies volontairement</li>
+      <li><strong>Photos des cultures</strong> : photos des plantes envoyées pour l'analyse diagnostique</li>
+      <li><strong>Identifiants de compte</strong> : paramètres de connexion et de profil</li>
+      <li><strong>Données d’utilisation</strong> : métriques anonymisées de diagnostic et de performance de l’application</li>
+    </ul>
+  </div>
 
-<ul>
-  <li><strong>Nom</strong> : utilisé pour personnaliser l’expérience utilisateur (si fourni lors de l’inscription)</li>
-  <li><strong>Coordonnées de l’utilisateur</strong> : telles que adresse e-mail et autres informations de contact fournies volontairement</li>
-  <li>Photos des plantes envoyées pour analyse</li>
-  <li>Identifiants de compte utilisateur</li>
-  <li>Données d’utilisation et de performance de l’application</li>
-</ul>
+  <div class="section">
+    <h2><span class="icon">⚙️</span> 2. Utilisation des données</h2>
+    <p>Les données collectées sont utilisées uniquement pour :</p>
+    <ul>
+      <li>Fournir et affiner le service de diagnostic des maladies végétales</li>
+      <li>Améliorer en continu les modèles d’intelligence artificielle</li>
+      <li>Permettre la communication et l'assistance technique avec l’utilisateur</li>
+      <li>Assurer la sécurité, la stabilité et le bon fonctionnement technique du service</li>
+    </ul>
+  </div>
 
-<h2>2. Utilisation des données</h2>
+  <div class="section">
+    <h2><span class="icon">🔒</span> 3. Partage des données</h2>
+    <p><strong>Nous ne vendons en aucun cas vos données personnelles à des tiers.</strong></p>
+    <p>Certaines données techniques peuvent être traitées de manière sécurisée par des prestataires cloud et d'infrastructure IA strictement nécessaires au fonctionnement du service.</p>
+  </div>
 
-<p>
-Les données collectées sont utilisées uniquement pour :
-</p>
+  <div class="section">
+    <h2><span class="icon">🛡️</span> 4. Sécurité</h2>
+    <p>Nous mettons en œuvre des protocoles de chiffrement et des mesures de sécurité industrielles avancées pour protéger vos informations contre tout accès, modification ou divulgation non autorisés.</p>
+  </div>
 
-<ul>
-  <li>Fournir le service de diagnostic des plantes</li>
-  <li>Améliorer les performances de l’application</li>
-  <li>Permettre la communication avec l’utilisateur si nécessaire</li>
-  <li>Assurer le bon fonctionnement technique du service</li>
-</ul>
+  <div class="section">
+    <h2><span class="icon">⏳</span> 5. Conservation des données</h2>
+    <p>Les données sont conservées uniquement pendant la durée strictement nécessaire au fonctionnement du service et au respect de nos obligations légales.</p>
+  </div>
 
-<h2>3. Partage des données</h2>
+  <div class="section">
+    <h2><span class="icon">📬</span> 6. Contact &amp; Assistance</h2>
+    <p>Pour toute question relative à vos données ou pour exercer vos droits, contactez-nous directement :</p>
+    <p>
+      • <strong>Email :</strong> <a href="mailto:plantixia@nextbytechno.com" style="color: var(--green); font-weight: 700;">plantixia@nextbytechno.com</a><br>
+      • <strong>Téléphone &amp; WhatsApp :</strong> <a href="tel:+243995006529" style="color: var(--green); font-weight: 700;">+243 995 006 529</a><br>
+      • <strong>LinkedIn :</strong> <a href="https://www.linkedin.com/company/plantixia/" target="_blank" rel="noopener noreferrer" style="color: var(--green); font-weight: 700;">Plantixia sur LinkedIn</a>
+    </p>
+  </div>
+</div>
 
-<p>
-Nous ne vendons pas les données personnelles des utilisateurs.
-Certaines données peuvent être traitées par des services tiers nécessaires au fonctionnement de l’application (analyse d’image, cloud, intelligence artificielle).
-</p>
-
-<h2>4. Sécurité</h2>
-
-<p>
-Nous mettons en place des mesures de sécurité pour protéger les données contre tout accès non autorisé.
-</p>
-
-<h2>5. Conservation des données</h2>
-
-<p>
-Les données sont conservées uniquement pendant la durée nécessaire au fonctionnement du service.
-</p>
-
-<h2>6. Contact</h2>
-
-<p>
-Email : contact@nextbytechno.com
-</p>
+<footer>
+  <p>&copy; 2026 Plantixia. Propulsé par <strong style="color: var(--dark);">Next Byte Technology</strong>. <a href="index.html">Retour à l'accueil</a></p>
+</footer>
 
 </body>
 </html>

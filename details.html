@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détails du Projet | Plantixia - Intelligence Artificielle Agricole</title>
+
+    <!-- Favicon & Icons -->
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="apple-touch-icon" href="logo.png">
+
+    <meta http-equiv="refresh" content="0; url=index.html">
+    <script>window.location.replace("index.html");</script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        :root {
+            --primary: #10B981;
+            --primary-dark: #059669;
+            --secondary: #F59E0B;
+            --bg: #020617;
+            --card-bg: rgba(30, 41, 59, 0.4);
+            --text: #F8FAFC;
+            --text-dim: #94A3B8;
+            --border: rgba(255, 255, 255, 0.08);
+            --accent-gradient: linear-gradient(135deg, #10B981 0%, #059669 100%);
+        }
+
+        :root[data-theme="light"] {
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #0f172a;
+            --text-dim: #64748b;
+            --border: rgba(0, 0, 0, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            overflow-x: hidden;
+            line-height: 1.6;
+            transition: background-color 0.3s, color 0.3s;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+
+        /* --- Navigation --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 1.25rem 0;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.8);
+            backdrop-filter: blur(16px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        [data-theme="light"] nav {
+            background: rgba(248, 250, 252, 0.8);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+            transition: opacity 0.2s ease;
+        }
+
+        .logo:hover {
+            opacity: 0.9;
+        }
+
+        .logo-img {
+            width: 36px;
+            height: 36px;
+            object-fit: contain;
+            border-radius: 8px;
+            filter: drop-shadow(0 2px 8px rgba(16, 185, 129, 0.35));
+            transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+        }
+
+        .logo:hover .logo-img {
+            transform: scale(1.08) rotate(3deg);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            color: var(--text-dim);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+        }
+
+        .btn-sm {
+            background: var(--accent-gradient);
+            color: white;
+            padding: 0.6rem 1.25rem;
+            border-radius: 12px;
+            font-weight: 700;
+            text-decoration: none;
+            font-size: 0.85rem;
+        }
+
+        .theme-btn,
+        .lang-btn {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+
+        .theme-btn:hover,
+        .lang-btn:hover {
+            background: rgba(16, 185, 129, 0.1);
+            color: var(--primary);
+        }
+
+        /* --- Header --- */
+        .details-header {
+            padding-top: 140px;
+            padding-bottom: 40px;
+            text-align: center;
+        }
+
+        .details-header h1 {
+            font-size: clamp(2.2rem, 6vw, 3.5rem);
+            font-weight: 800;
+            margin-bottom: 1rem;
+        }
+
+        .details-header h1 span {
+            background: var(--accent-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .details-header p {
+            color: var(--text-dim);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.15rem;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 3rem 0;
+        }
+
+        .section-title {
+            font-size: 1.8rem;
+            font-weight: 800;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            color: var(--text);
+            border-bottom: 2px solid var(--border);
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title i {
+            color: var(--primary);
+        }
+
+        /* --- Objectives --- */
+        .objectives-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .objective-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: all 0.3s;
+        }
+
+        .objective-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-4px);
+        }
+
+        .objective-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 0.75rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .objective-card p {
+            color: var(--text-dim);
+            font-size: 0.95rem;
+        }
+
+        /* --- Advantages --- */
+        .advantages-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .advantages-list {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .advantage-item {
+            display: flex;
+            gap: 1rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 1.5rem;
+        }
+
+        .advantage-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 12px;
+            background: rgba(16, 185, 129, 0.15);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .advantage-content h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .advantage-content p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        /* --- Features Timeline/Details --- */
+        .features-detailed {
+            display: flex;
+            flex-direction: column;
+            gap: 3rem;
+        }
+
+        .feat-row {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        @media (max-width: 768px) {
+            .feat-row {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .feat-row:nth-child(even) {
+                direction: ltr;
+            }
+        }
+
+        .feat-info h3 {
+            font-size: 1.5rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .feat-info p {
+            color: var(--text-dim);
+            margin-bottom: 1.5rem;
+            font-size: 1rem;
+        }
+
+        .feat-list {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .feat-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 0.95rem;
+            color: var(--text);
+        }
+
+        .feat-list li i {
+            color: var(--primary);
+            flex-shrink: 0;
+        }
+
+        .feat-visual {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 2.5rem;
+            text-align: center;
+            box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.3);
+        }
+
+        .feat-visual i {
+            width: 72px;
+            height: 72px;
+            color: var(--primary);
+        }
+
+        /* --- Footer --- */
+        footer {
+            margin-top: auto;
+            border-top: 1px solid var(--border);
+            padding: 2.5rem 0;
+            background: rgba(2, 6, 23, 0.5);
+            backdrop-filter: blur(10px);
+            text-align: center;
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="container nav-content">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Plantixia Logo" class="logo-img">
+                <span>Plantixia</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html" data-i18n="nav_home">Accueil</a>
+                <a href="index.html#vision" data-i18n="nav_vision">Vision</a>
+                <a href="index.html#features" data-i18n="nav_features">Fonctionnalités</a>
+                <a href="market.html">Market</a>
+                <a href="#" style="color: var(--primary); font-weight: 700;">Détails</a>
+                <a href="index.html#download" class="btn-sm" data-i18n="nav_download">Télécharger</a>
+            </div>
+            <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
+                <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()" title="Changer le thème"></button>
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()" title="Changer la langue" style="font-weight: 700; font-size: 0.8rem;">EN</button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <header class="details-header">
+            <h1 data-i18n="det_title">Détails du Projet <span>Plantixia</span></h1>
+            <p data-i18n="det_desc">Une suite agronomique complète combinant l'intelligence artificielle multi-moteur, le support expert et l'analyse prédictive.</p>
+        </header>
+
+        <!-- Objectives Section -->
+        <section id="objectives">
+            <h2 class="section-title"><i data-lucide="target"></i> <span data-i18n="obj_title">Objectifs Clés</span></h2>
+            <div class="objectives-grid">
+                <div class="objective-card">
+                    <h3 data-i18n="obj_1_t"><i data-lucide="shield-alert"></i> Sécurité Alimentaire</h3>
+                    <p data-i18n="obj_1_d">Réduire les pertes annuelles de récoltes causées par les ravageurs et maladies en diagnostiquant le plus précocement possible.</p>
+                </div>
+                <div class="objective-card">
+                    <h3 data-i18n="obj_2_t"><i data-lucide="help-circle"></i> Accessibilité Totale</h3>
+                    <p data-i18n="obj_2_d">Démocratiser l'accès aux conseils agricoles là où les infrastructures d'assistance technique manquent cruellement.</p>
+                </div>
+                <div class="objective-card">
+                    <h3 data-i18n="obj_3_t"><i data-lucide="sparkles"></i> Consensus Scientifique</h3>
+                    <p data-i18n="obj_3_d">Éliminer les erreurs de diagnostic en croisant les résultats de plusieurs modèles d'intelligence artificielle.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Advantages Section -->
+        <section id="advantages">
+            <h2 class="section-title"><i data-lucide="thumbs-up"></i> <span data-i18n="adv_title">Avantages de notre Solution</span></h2>
+            <div class="advantages-list">
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i data-lucide="zap"></i></div>
+                    <div class="advantage-content">
+                        <h4 data-i18n="adv_1_t">Diagnostic Instantané</h4>
+                        <p data-i18n="adv_1_d">Plus besoin d'attendre des jours pour une visite technique, obtenez une ordonnance de traitement en moins de 3 secondes.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i data-lucide="wifi-off"></i></div>
+                    <div class="advantage-content">
+                        <h4 data-i18n="adv_2_t">Mode Hors-Ligne</h4>
+                        <p data-i18n="adv_2_d">Stockez vos analyses localement et synchronisez-les dès que vous retrouvez du réseau ou connectez-vous via SMS/Cloud.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i data-lucide="trending-down"></i></div>
+                    <div class="advantage-content">
+                        <h4 data-i18n="adv_3_t">Intrants Optimisés</h4>
+                        <p data-i18n="adv_3_d">Évitez le gaspillage de pesticides et engrais coûteux en appliquant la molécule exacte requise par le diagnostic.</p>
+                    </div>
+                </div>
+                <div class="advantage-item">
+                    <div class="advantage-icon"><i data-lucide="globe"></i></div>
+                    <div class="advantage-content">
+                        <h4 data-i18n="adv_4_t">Cartographie Prédictive</h4>
+                        <p data-i18n="adv_4_d">Identifiez et prévenez la propagation des foyers de contamination grâce aux alertes géolocalisées en temps réel.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Detailed Section -->
+        <section id="features-detail">
+            <h2 class="section-title"><i data-lucide="box"></i> <span data-i18n="feat_detail_title">Fonctionnalités en Profondeur</span></h2>
+            <div class="features-detailed">
+                
+                <!-- Feat 1 -->
+                <div class="feat-row">
+                    <div class="feat-info">
+                        <h3 data-i18n="fd_1_t"><i data-lucide="scan-face"></i> Scanner par Intelligence Artificielle</h3>
+                        <p data-i18n="fd_1_d">Notre scanner intègre un moteur d'intelligence artificielle avancé. Il croise plusieurs algorithmes de vision par ordinateur pour émettre une recommandation finale fiable à plus de 98%.</p>
+                        <ul class="feat-list">
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_1_f1">Niveau de confiance IA calculé</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_1_f2">Suggestions de traitement et de prévention</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_1_f3">Historique des analyses avec photos persistées</span></li>
+                        </ul>
+                    </div>
+                    <div class="feat-visual">
+                        <i data-lucide="brain-circuit" style="width: 80px; height: 80px;"></i>
+                    </div>
+                </div>
+
+                <!-- Feat 2 -->
+                <div class="feat-row" style="direction: rtl; text-align: left;">
+                    <div class="feat-info" style="direction: ltr;">
+                        <h3 data-i18n="fd_2_t"><i data-lucide="shopping-cart"></i> Market Agricole & Solutionneur</h3>
+                        <p data-i18n="fd_2_d">Dès qu'une anomalie ou maladie est détectée sur une culture, un bouton intelligent "Trouver la solution" oriente l'agriculteur vers les boutiques et pharmacies agricoles partenaires les plus proches.</p>
+                        <ul class="feat-list">
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_2_f1">Recherche intelligente par mots-clés</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_2_f2">Mise en avant des produits et remèdes en stock</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_2_f3">Itinéraires GPS intégrés vers les boutiques</span></li>
+                        </ul>
+                    </div>
+                    <div class="feat-visual" style="direction: ltr;">
+                        <i data-lucide="store" style="width: 80px; height: 80px;"></i>
+                    </div>
+                </div>
+
+                <!-- Feat 3 -->
+                <div class="feat-row">
+                    <div class="feat-info">
+                        <h3 data-i18n="fd_3_t"><i data-lucide="bar-chart-4"></i> Tableau de bord B2B & Surveillance</h3>
+                        <p data-i18n="fd_3_d">Pour les coopératives, ONG et ministères, Plantixia propose des outils décisionnels avancés basés sur la collecte anonyme d'analyses terrain.</p>
+                        <ul class="feat-list">
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_3_f1">Rapports statistiques visuels (graphiques d'évolution)</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_3_f2">Cartes de surveillance avec alertes précoces</span></li>
+                            <li><i data-lucide="check"></i> <span data-i18n="fd_3_f3">Exports sécurisés au format CSV et rapports PDF d'entreprise</span></li>
+                        </ul>
+                    </div>
+                    <div class="feat-visual">
+                        <i data-lucide="line-chart" style="width: 80px; height: 80px;"></i>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer data-i18n="ftr_rights">
+        &copy; 2026 Plantixia. Tous droits réservés.
+    </footer>
+
+    <script>
+        const translations = {
+            fr: {
+                nav_home: "Accueil",
+                nav_vision: "Vision",
+                nav_features: "Fonctionnalités",
+                nav_download: "Télécharger",
+                det_title: "Détails du Projet <span>Plantixia</span>",
+                det_desc: "Une suite agronomique complète combinant l'intelligence artificielle multi-moteur, le support expert et l'analyse prédictive.",
+                obj_title: "Objectifs Clés",
+                obj_1_t: "Sécurité Alimentaire",
+                obj_1_d: "Réduire les pertes annuelles de récoltes causées par les ravageurs et maladies en diagnostiquant le plus précocement possible.",
+                obj_2_t: "Accessibilité Totale",
+                obj_2_d: "Démocratiser l'accès aux conseils agricoles là où les infrastructures d'assistance technique manquent cruellement.",
+                obj_3_t: "Consensus Scientifique",
+                obj_3_d: "Éliminer les erreurs de diagnostic en croisant les résultats de plusieurs modèles d'intelligence artificielle.",
+                adv_title: "Avantages de notre Solution",
+                adv_1_t: "Diagnostic Instantané",
+                adv_1_d: "Plus besoin d'attendre des jours pour une visite technique, obtenez une ordonnance de traitement en moins de 3 secondes.",
+                adv_2_t: "Mode Hors-Ligne",
+                adv_2_d: "Stockez vos analyses localement et synchronisez-les dès que vous retrouvez du réseau ou connectez-vous via SMS/Cloud.",
+                adv_3_t: "Intrants Optimisés",
+                adv_3_d: "Évitez le gaspillage de pesticides et engrais coûteux en appliquant la molécule exacte requise par le diagnostic.",
+                adv_4_t: "Cartographie Prédictive",
+                adv_4_d: "Identifiez et prévenez la propagation des foyers de contamination grâce aux alertes géolocalisées en temps réel.",
+                feat_detail_title: "Fonctionnalités en Profondeur",
+                fd_1_t: "Scanner par Intelligence Artificielle",
+                fd_1_d: "Notre scanner intègre un moteur d'intelligence artificielle avancé. Il croise plusieurs algorithmes de vision par ordinateur pour émettre une recommandation finale fiable à plus de 98%.",
+                fd_1_f1: "Niveau de confiance IA calculé",
+                fd_1_f2: "Suggestions de traitement et de prévention",
+                fd_1_f3: "Historique des analyses avec photos persistées",
+                fd_2_t: "Market Agricole & Solutionneur",
+                fd_2_d: "Dès qu'une anomalie ou maladie est détectée sur une culture, un bouton intelligent \"Trouver la solution\" oriente l'agriculteur vers les boutiques et pharmacies agricoles partenaires les plus proches.",
+                fd_2_f1: "Recherche intelligente par mots-clés",
+                fd_2_f2: "Mise en avant des produits et remèdes en stock",
+                fd_2_f3: "Itinéraires GPS intégrés vers les boutiques",
+                fd_3_t: "Tableau de bord B2B & Surveillance",
+                fd_3_d: "Pour les coopératives, ONG et ministères, Plantixia propose des outils décisionnels avancés basés sur la collecte anonyme d'analyses terrain.",
+                fd_3_f1: "Rapports statistiques visuels (graphiques d'évolution)",
+                fd_3_f2: "Cartes de surveillance avec alertes précoces",
+                fd_3_f3: "Exports sécurisés au format CSV et rapports PDF d'entreprise",
+                ftr_rights: "&copy; 2026 Plantixia. Tous droits réservés."
+            },
+            en: {
+                nav_home: "Home",
+                nav_vision: "Vision",
+                nav_features: "Features",
+                nav_download: "Download",
+                det_title: "Project Details <span>Plantixia</span>",
+                det_desc: "A comprehensive agronomic suite combining multi-engine artificial intelligence, expert support, and predictive analysis.",
+                obj_title: "Key Objectives",
+                obj_1_t: "Food Security",
+                obj_1_d: "Reduce annual harvest losses caused by pests and diseases by diagnosing as early as possible.",
+                obj_2_t: "Total Accessibility",
+                obj_2_d: "Democratize access to agricultural advice where technical assistance infrastructure is sorely lacking.",
+                obj_3_t: "Scientific Consensus",
+                obj_3_d: "Eliminate diagnostic errors by crossing the results of multiple artificial intelligence models.",
+                adv_title: "Advantages of our Solution",
+                adv_1_t: "Instant Diagnosis",
+                adv_1_d: "No more waiting days for a technical visit, get a treatment prescription in less than 3 seconds.",
+                adv_2_t: "Offline Mode",
+                adv_2_d: "Store your analyses locally and sync them as soon as you find network or connect via SMS/Cloud.",
+                adv_3_t: "Optimized Inputs",
+                adv_3_d: "Avoid wasting expensive pesticides and fertilizers by applying the exact molecule required by the diagnosis.",
+                adv_4_t: "Predictive Mapping",
+                adv_4_d: "Identify and prevent the spread of contamination hot spots with real-time geolocated alerts.",
+                feat_detail_title: "In-Depth Features",
+                fd_1_t: "Artificial Intelligence Scanner",
+                fd_1_d: "Our scanner integrates an advanced artificial intelligence engine. It combines multiple computer vision models to issue a final recommendation reliable at over 98%.",
+                fd_1_f1: "Calculated AI confidence level",
+                fd_1_f2: "Treatment and prevention suggestions",
+                fd_1_f3: "Analysis history with persisted photos",
+                fd_2_t: "Agricultural Market & Solutions",
+                fd_2_d: "As soon as an anomaly or disease is detected on a crop, a smart button \"Find the solution\" directs the farmer to the nearest partner agricultural stores and pharmacies.",
+                fd_2_f1: "Smart keyword search",
+                fd_2_f2: "Highlighting products and remedies in stock",
+                fd_2_f3: "Integrated GPS directions to stores",
+                fd_3_t: "B2B Dashboard & Surveillance",
+                fd_3_d: "For cooperatives, NGOs, and ministries, Plantixia offers advanced decision-making tools based on the anonymous collection of field analyses.",
+                fd_3_f1: "Visual statistical reports (evolution graphs)",
+                fd_3_f2: "Surveillance maps with early warning alerts",
+                fd_3_f3: "Secure CSV exports and enterprise PDF reports",
+                ftr_rights: "&copy; 2026 Plantixia. All rights reserved."
+            }
+        };
+
+        let currentLang = localStorage.getItem('plantixia_lang') || 'fr';
+        let currentTheme = localStorage.getItem('plantixia_theme') || 'dark';
+
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                document.getElementById('theme-toggle').innerHTML = '<i data-lucide="moon"></i>';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                document.getElementById('theme-toggle').innerHTML = '<i data-lucide="sun"></i>';
+            }
+            if (typeof lucide !== 'undefined') lucide.createIcons();
+            currentTheme = theme;
+            localStorage.setItem('plantixia_theme', theme);
+        }
+
+        function toggleTheme() {
+            applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+        }
+
+        function applyLanguage(lang) {
+            const lt = document.getElementById('lang-toggle');
+            if (lt) lt.innerText = lang === 'fr' ? 'EN' : 'FR';
+            const els = document.querySelectorAll('[data-i18n]');
+            els.forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[lang] && translations[lang][key]) {
+                    el.innerHTML = translations[lang][key];
+                }
+            });
+            currentLang = lang;
+            localStorage.setItem('plantixia_lang', lang);
+        }
+
+        function toggleLanguage() {
+            applyLanguage(currentLang === 'fr' ? 'en' : 'fr');
+        }
+
+        // Initialize Page
+        document.addEventListener('DOMContentLoaded', () => {
+            applyTheme(currentTheme);
+            applyLanguage(currentLang);
+        });
+    </script>
+</body>
+
+</html>
