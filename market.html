@@ -477,13 +477,13 @@
                 <a href="index.html" data-i18n="nav_home">Accueil</a>
                 <a href="index.html#vision" data-i18n="nav_vision">Vision</a>
                 <a href="index.html#features" data-i18n="nav_features">Fonctionnalités</a>
-                <a href="#" style="color: var(--primary); font-weight: 700;">Market</a>
+                <a href="#" style="color: var(--primary); font-weight: 700;" data-i18n="nav_market">Market</a>
         
                 <a href="index.html#download" class="btn-sm" data-i18n="nav_download">Télécharger</a>
             </div>
             <div style="display: flex; gap: 0.5rem; margin-left: 1rem;">
                 <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()" title="Changer le thème"></button>
-                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()" title="Changer la langue" style="font-weight: 700; font-size: 0.8rem;">EN</button>
+                <button id="lang-toggle" class="lang-btn" onclick="toggleLanguage()" title="Changer la langue" style="font-weight: 700; font-size: 0.8rem;">FR</button>
             </div>
         </div>
     </nav>
@@ -501,13 +501,13 @@
                 <button class="search-btn" onclick="onSearch()" data-i18n="search_btn">Rechercher</button>
             </div>
             <div class="tags-container">
-                <button class="tag-btn active" onclick="filterByTag('', this)">Tout</button>
-                <button class="tag-btn" onclick="filterByTag('Engrais', this)">Engrais</button>
-                <button class="tag-btn" onclick="filterByTag('Pesticide', this)">Pesticides</button>
-                <button class="tag-btn" onclick="filterByTag('Fongicide', this)">Fongicides</button>
-                <button class="tag-btn" onclick="filterByTag('Graine', this)">Semences</button>
-                <button class="tag-btn" onclick="filterByTag('Mildiou', this)">Mildiou</button>
-                <button class="tag-btn" onclick="filterByTag('Insecticide', this)">Insecticides</button>
+                <button class="tag-btn active" onclick="filterByTag('', this)" data-i18n="tag_all">Tout</button>
+                <button class="tag-btn" onclick="filterByTag('Engrais', this)" data-i18n="tag_fertilizer">Engrais</button>
+                <button class="tag-btn" onclick="filterByTag('Pesticide', this)" data-i18n="tag_pesticides">Pesticides</button>
+                <button class="tag-btn" onclick="filterByTag('Fongicide', this)" data-i18n="tag_fungicides">Fongicides</button>
+                <button class="tag-btn" onclick="filterByTag('Graine', this)" data-i18n="tag_seeds">Semences</button>
+                <button class="tag-btn" onclick="filterByTag('Mildiou', this)" data-i18n="tag_mildew">Mildiou</button>
+                <button class="tag-btn" onclick="filterByTag('Insecticide', this)" data-i18n="tag_insecticides">Insecticides</button>
             </div>
         </section>
 
@@ -536,10 +536,18 @@
                 nav_home: "Accueil",
                 nav_vision: "Vision",
                 nav_features: "Fonctionnalités",
+                nav_market: "Market",
                 nav_download: "Télécharger",
                 market_title: "Market <span>Agricole</span>",
                 market_desc: "Trouvez des pharmacies et boutiques spécialisées pour vous ravitailler en engrais, pesticides et produits de traitement agronomique.",
                 search_btn: "Rechercher",
+                tag_all: "Tout",
+                tag_fertilizer: "Engrais",
+                tag_pesticides: "Pesticides",
+                tag_fungicides: "Fongicides",
+                tag_seeds: "Semences",
+                tag_mildew: "Mildiou",
+                tag_insecticides: "Insecticides",
                 loading: "Chargement des boutiques partenaires...",
                 no_shops: "Aucune boutique ne correspond à votre recherche.",
                 ftr_rights: "&copy; 2026 Plantixia. Tous droits réservés.",
@@ -550,10 +558,18 @@
                 nav_home: "Home",
                 nav_vision: "Vision",
                 nav_features: "Features",
+                nav_market: "Market",
                 nav_download: "Download",
                 market_title: "Agricultural <span>Market</span>",
                 market_desc: "Find specialized pharmacies and stores to stock up on fertilizers, pesticides, and agronomic treatment products.",
                 search_btn: "Search",
+                tag_all: "All",
+                tag_fertilizer: "Fertilizers",
+                tag_pesticides: "Pesticides",
+                tag_fungicides: "Fungicides",
+                tag_seeds: "Seeds",
+                tag_mildew: "Mildew",
+                tag_insecticides: "Insecticides",
                 loading: "Loading partner stores...",
                 no_shops: "No stores match your search query.",
                 ftr_rights: "&copy; 2026 Plantixia. All rights reserved.",

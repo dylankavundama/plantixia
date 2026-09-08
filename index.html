@@ -1444,8 +1444,7 @@
     </style>
 </head>
 
-<body>
-    <nav>
+<body>    <nav>
         <div class="container nav-content">
             <a href="#" class="logo">
                 <img src="logo.png" alt="Plantixia Logo" class="logo-img">
@@ -1453,15 +1452,14 @@
             </a>
             <div class="nav-links" id="nav-links">
                 <a href="#vision" data-i18n="nav_vision">Vision</a>
-              
+                <a href="#problem" data-i18n="nav_problem">L'Enjeu</a>
                 <a href="#tech" data-i18n="nav_tech">Technologie</a>
                 <a href="#benefits" data-i18n="nav_benefits">Avantages</a>
                 <a href="#features" data-i18n="nav_features">Fonctionnalités</a>
                 <a href="#pricing" data-i18n="nav_pricing">Tarifs</a>
-                <a href="market.html">Market</a>
+                <a href="market.html" data-i18n="nav_market">Market</a>
                 <a href="../admin/index.php" class="btn-sm"
-                    style="background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text);">Espace
-                    Organisation</a>
+                    style="background: rgba(255,255,255,0.05); border: 1px solid var(--border); color: var(--text);" data-i18n="nav_org_space">Espace Organisation</a>
             </div>
             <div class="nav-actions">
                 <a href="#download" class="btn-sm" data-i18n="nav_download">Télécharger</a>
@@ -1482,14 +1480,12 @@
             <div class="hero-grid">
                 <div class="hero-content">
                     <div class="reveal">
-                        <h1 data-i18n="hero_title">Le Futur de l'Agriculture est <span
-                                data-i18n="hero_title_span">Intelligent</span>.</h1>
+                        <h1 data-i18n="hero_title">Le Futur de l'Agriculture est <span>Intelligent</span>.</h1>
                         <p data-i18n="hero_desc">Sauver les récoltes mondiales en mettant la puissance de l'IA entre les
                             mains de chaque agriculteur. Diagnostic instantané, conseils d'experts et communauté réunie.
                         </p>
                         <div class="hero-btns">
-                            <a href="#features" class="btn-sm" style="padding: 1rem 2rem; font-size: 1rem;">Découvrir le
-                                projet</a>
+                            <a href="#features" class="btn-sm" style="padding: 1rem 2rem; font-size: 1rem;" data-i18n="hero_btn_discover">Découvrir le projet</a>
                             <a href="#vision"
                                 style="color: var(--text-dim); text-decoration: none; font-weight: 700; display: flex; align-items: center; gap: 0.5rem;">
                                 <span data-i18n="hero_btn_vision">Notre vision</span> <i data-lucide="arrow-right"></i>
@@ -1577,19 +1573,19 @@
             <div class="stats-grid">
                 <div class="reveal">
                     <h3 style="font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; color: var(--primary);">98%</h3>
-                    <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">
+                    <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;" data-i18n="stat_precision">
                         Précision IA</p>
                 </div>
                 <div class="reveal">
                     <h3 style="font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; color: var(--primary);">40%</h3>
-                    <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">
+                    <p style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;" data-i18n="stat_losses">
                         Pertes Évitées</p>
                 </div>
                 <div class="reveal">
                     <h3 style="font-size: clamp(2rem, 6vw, 3rem); font-weight: 800; color: var(--primary);">
                         &lt; 3s</h3>
                     <p
-                        style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;">
+                        style="color: var(--text-dim); text-transform: uppercase; font-size: 0.8rem; font-weight: 700;" data-i18n="stat_diag">
                         Diagnostic</p>
                 </div>
             </div>
@@ -1638,7 +1634,7 @@
                     </p>
                 </div>
 
-                <!-- 3. Gouvernements & Ministères -->
+                <!-- 3. Gouvernements & Décideurs -->
                 <div class="stakeholder-card reveal" style="--card-accent: #F59E0B;">
                     <div class="stakeholder-card__header">
                         <div class="stakeholder-card__icon" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B;">
@@ -1690,14 +1686,14 @@
                     <div class="icon-box" style="background: rgba(245, 158, 11, 0.1); color: #F59E0B;"><i
                             data-lucide="database"></i></div>
                     <h3 data-i18n="tech_2_t">Big Data Agricole</h3>
-                    <p>Notre base de données propriétaire apprend de chaque scan, permettant une détection prédictive
+                    <p data-i18n="tech_2_d">Notre base de données propriétaire apprend de chaque scan, permettant une détection prédictive
                         des épidémies régionales.</p>
                 </div>
                 <div class="card reveal">
                     <div class="icon-box" style="background: rgba(16, 185, 129, 0.1); color: var(--primary);"><i
                             data-lucide="layers"></i></div>
                     <h3 data-i18n="tech_3_t">Scalabilité Cloud</h3>
-                    <p>Une infrastructure légère et ultra-rapide capable de supporter des millions d'utilisateurs avec
+                    <p data-i18n="tech_3_d">Une infrastructure légère et ultra-rapide capable de supporter des millions d'utilisateurs avec
                         une latence minimale.</p>
                 </div>
             </div>
@@ -1714,28 +1710,28 @@
                     <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i
                             data-lucide="zap"></i></div>
                     <h4 data-i18n="ben_1_t">Gain de Temps</h4>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Obtenez un diagnostic en quelques secondes,
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" data-i18n="ben_1_d">Obtenez un diagnostic en quelques secondes,
                         sans attendre la visite d'un expert sur le terrain.</p>
                 </div>
                 <div class="reveal" style="text-align: center; padding: 1.5rem;">
                     <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i
                             data-lucide="trending-down"></i></div>
                     <h4 data-i18n="ben_2_t">Réduction des Coûts</h4>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Évitez l'achat de produits inadaptés en
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" data-i18n="ben_2_d">Évitez l'achat de produits inadaptés en
                         identifiant avec précision la source du problème.</p>
                 </div>
                 <div class="reveal" style="text-align: center; padding: 1.5rem;">
                     <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i
                             data-lucide="shield-check"></i></div>
                     <h4 data-i18n="ben_3_t">Sécurité des Récoltes</h4>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Anticipez les épidémies grâce aux alertes
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" data-i18n="ben_3_d">Anticipez les épidémies grâce aux alertes
                         communautaires et protégez vos rendements.</p>
                 </div>
                 <div class="reveal" style="text-align: center; padding: 1.5rem;">
                     <div class="icon-box" style="margin: 0 auto 1.5rem; background: rgba(16, 185, 129, 0.1);"><i
                             data-lucide="languages"></i></div>
                     <h4 data-i18n="ben_4_t">Proximité Locale</h4>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Une interface intuitive disponible en langues
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" data-i18n="ben_4_d">Une interface intuitive disponible en langues
                         locales pour une accessibilité totale.</p>
                 </div>
             </div>
@@ -1757,19 +1753,19 @@
                 <div class="card reveal">
                     <div class="icon-box"><i data-lucide="message-square"></i></div>
                     <h3 data-i18n="feat_2_t">Support Experts</h3>
-                    <p>Connectez-vous avec des ingénieurs agronomes certifiés pour des consultations personnalisées en
+                    <p data-i18n="feat_2_d">Connectez-vous avec des ingénieurs agronomes certifiés pour des consultations personnalisées en
                         temps réel.</p>
                 </div>
                 <div class="card reveal">
                     <div class="icon-box"><i data-lucide="users"></i></div>
                     <h3 data-i18n="feat_3_t">Communauté</h3>
-                    <p>Partagez vos diagnostics, apprenez des autres agriculteurs et suivez l'évolution des épidémies
+                    <p data-i18n="feat_3_d">Partagez vos diagnostics, apprenez des autres agriculteurs et suivez l'évolution des épidémies
                         dans votre région.</p>
                 </div>
                 <div class="card reveal">
                     <div class="icon-box"><i data-lucide="shopping-bag"></i></div>
                     <h3 data-i18n="feat_4_t">Market & Solutionneur</h3>
-                    <p>Accédez à notre réseau de boutiques et pharmacies agricoles pour acheter vos traitements et intrants dès qu'une maladie est détectée.</p>
+                    <p data-i18n="feat_4_d">Accédez à notre réseau de boutiques et pharmacies agricoles pour acheter vos traitements et intrants dès qu'une maladie est détectée.</p>
                 </div>
             </div>
         </section>
@@ -1799,7 +1795,7 @@
                                 détections</span></li>
                     </ul>
                     <a href="#download" class="btn-sm"
-                        style="text-align: center; margin-top: 1rem; display: block; border: 1px solid var(--primary); background: transparent; color: var(--primary);">Commencer</a>
+                        style="text-align: center; margin-top: 1rem; display: block; border: 1px solid var(--primary); background: transparent; color: var(--primary);" data-i18n="btn_start">Commencer</a>
                 </div>
 
                 <!-- Individuel Annuel -->
@@ -1818,7 +1814,7 @@
                                 limité</span></li>
                     </ul>
                     <a href="#download" class="btn-sm"
-                        style="text-align: center; margin-top: 1rem; display: block;">S'abonner</a>
+                        style="text-align: center; margin-top: 1rem; display: block;" data-i18n="btn_subscribe">S'abonner</a>
                 </div>
 
                 <!-- Entreprise -->
@@ -1826,7 +1822,7 @@
                     <h3 data-i18n="price_3_t">Licence Entreprise</h3>
                     <p style="color: var(--text-dim);" data-i18n="price_3_d">Pour les coopératives et grandes
                         exploitations.</p>
-                    <div class="pricing-price">Dès $1000<span data-i18n="price_yr">/an</span></div>
+                    <div class="pricing-price"><span data-i18n="price_from">Dès </span>$1000<span data-i18n="price_yr">/an</span></div>
                     <ul class="pricing-features">
                         <li><i data-lucide="check-circle"></i> <span data-i18n="price_3_f1">Multi-comptes B2B gérés par
                                 admin</span></li>
@@ -1840,7 +1836,7 @@
                                 régionale</span></li>
                     </ul>
                     <button onclick="openRequestModal()" class="btn-sm"
-                        style="width: 100%; border: none; cursor: pointer; text-align: center; margin-top: 1rem; display: block; background: var(--secondary); color: white; font-size: 0.85rem; font-family: inherit;">S'inscrire</button>
+                        style="width: 100%; border: none; cursor: pointer; text-align: center; margin-top: 1rem; display: block; background: var(--secondary); color: white; font-size: 0.85rem; font-family: inherit;" data-i18n="btn_register">S'inscrire</button>
                 </div>
             </div>
         </section>
@@ -1901,7 +1897,7 @@
                             <span>plantixia.com/surveillance</span>
                         </div>
                         <div style="display: flex; gap: 6px; color: var(--text-dim);">
-                            <span style="font-size: 0.75rem; font-weight: 600; background: rgba(16, 185, 129, 0.15); color: var(--primary); padding: 2px 8px; border-radius: 6px;">Live Data</span>
+                            <span style="font-size: 0.75rem; font-weight: 600; background: rgba(16, 185, 129, 0.15); color: var(--primary); padding: 2px 8px; border-radius: 6px;" data-i18n="surv_live">Données en Direct</span>
                         </div>
                     </div>
                     <div style="position: relative; line-height: 0; background: #020617;">
@@ -1911,6 +1907,7 @@
             </div>
         </section>
 
+        <!-- Team Section -->
         <section id="team" class="container">
             <div class="section-header reveal">
                 <h2 data-i18n="team_title">L'Équipe</h2>
@@ -1922,16 +1919,16 @@
                         <img src="equipe/delphin.jpg" alt="Delphin Makasi">
                     </div>
                     <h3>Delphin Makasi</h3>
-                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Ingénieur Agronome</p>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Expert en pathologie végétale.</p>
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;" data-i18n="team_1_role">Ingénieur Agronome</p>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" data-i18n="team_1_desc">Expert en pathologie végétale.</p>
                 </div>
                 <div class="member-card reveal">
                     <div class="avatar-placeholder">
                         <img src="equipe/prudent.png" alt="Prudent Migabo">
                     </div>
                     <h3>Prudent Migabo</h3>
-                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Développeur Mobile</p>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Spécialiste des modèles prédictifs basés sur
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;" data-i18n="team_2_role">Développeur Mobile</p>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" data-i18n="team_2_desc">Spécialiste des modèles prédictifs basés sur
                         l'IA.</p>
                 </div>
                 <div class="member-card reveal">
@@ -1940,9 +1937,9 @@
                             alt="Dylan Kavundama">
                     </div>
                     <h3>Dylan Kavundama</h3>
-                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;">Ingénieur IT & Fullstack
+                    <p style="color: var(--primary); font-weight: 700; margin-bottom: 0.5rem;" data-i18n="team_3_role">Ingénieur IT & Fullstack
                     </p>
-                    <p style="color: var(--text-dim); font-size: 0.9rem;">Expert en architecture mobile et cloud.</p>
+                    <p style="color: var(--text-dim); font-size: 0.9rem;" data-i18n="team_3_desc">Expert en architecture mobile et cloud.</p>
                 </div>
             </div>
         </section>
@@ -1955,7 +1952,7 @@
         <div class="container">
             <div style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 3rem;">
                 <div class="reveal">
-                    <h2 style="margin-bottom: 1.5rem; font-size: clamp(2rem, 5vw, 3rem);">Prêt à <span>cultiver le
+                    <h2 style="margin-bottom: 1.5rem; font-size: clamp(2rem, 5vw, 3rem);" data-i18n="ftr_title">Prêt à <span>cultiver le
                             futur</span> ?</h2>
                     <p data-i18n="ftr_desc"
                         style="color: var(--text-dim); margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto;">
@@ -2041,7 +2038,7 @@
                     </a>
 
                     <div class="footer-links">
-                        <a href="market.html" data-i18n="nav_market">Market Agricole</a>
+                        <a href="market.html" data-i18n="ftr_market">Market Agricole</a>
                         <a href="privacy.html" data-i18n="ftr_privacy">Politique de Confidentialité</a>
                         <a href="terms.html" data-i18n="ftr_terms">Conditions d'Utilisation</a>
                     </div>
@@ -2049,7 +2046,7 @@
                     <div>
                         <p data-i18n="ftr_rights">&copy; 2026 Plantixia. Tous droits réservés.</p>
                         <p
-                            style="margin-top: 0.5rem; font-weight: 700; color: var(--primary); letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.75rem;">
+                            style="margin-top: 0.5rem; font-weight: 700; color: var(--primary); letter-spacing: 0.05em; text-transform: uppercase; font-size: 0.75rem;" data-i18n="ftr_powered">
                             Propulsé par Next Byte Technology</p>
                     </div>
                 </div>
@@ -2075,20 +2072,20 @@
             <div class="dl-modal__icon">
                 <i data-lucide="info"></i>
             </div>
-            <h3 class="dl-modal__title">Meilleure Expérience</h3>
-            <p class="dl-modal__desc">
+            <h3 class="dl-modal__title" data-i18n="dl_modal_title">Meilleure Expérience</h3>
+            <p class="dl-modal__desc" data-i18n="dl_modal_desc">
                 Pour bénéficier des <b>mises à jour automatiques</b> et d'une sécurité maximale, nous recommandons
                 l'installation via le Google Play Store.
             </p>
             <div class="dl-modal__actions">
                 <a href="https://play.google.com/store/apps/details?id=com.plantixia.app" target="_blank"
-                    rel="noopener noreferrer" class="btn-sm dl-modal__btn">
+                    rel="noopener noreferrer" class="btn-sm dl-modal__btn" data-i18n="dl_modal_play">
                     Utiliser Google Play (Conseillé)
                 </a>
-                <a href="Plantixia.apk" id="confirm-apk-dl" class="btn-sm dl-modal__btn dl-modal__btn--ghost">
+                <a href="Plantixia.apk" id="confirm-apk-dl" class="btn-sm dl-modal__btn dl-modal__btn--ghost" data-i18n="dl_modal_direct">
                     Continuer le téléchargement direct
                 </a>
-                <button type="button" onclick="closeDownloadModal()" class="dl-modal__cancel">
+                <button type="button" onclick="closeDownloadModal()" class="dl-modal__cancel" data-i18n="dl_modal_cancel">
                     Annuler
                 </button>
             </div>
@@ -2098,13 +2095,33 @@
     <script>
         const translations = {
             fr: {
-                nav_vision: "Vision", nav_problem: "L'Enjeu", nav_tech: "Technologie", nav_benefits: "Avantages", nav_features: "Fonctionnalités", nav_pricing: "Tarifs", nav_download: "Télécharger", nav_pitch: "Pitch Deck",
-                hero_title: "Le Futur de l'Agriculture est <span>Intelligent</span>.", hero_desc: "Sauver les récoltes mondiales en mettant la puissance de l'IA entre les mains de chaque agriculteur. Diagnostic instantané, conseils d'experts et communauté réunie.", hero_btn_discover: "Découvrir le projet", hero_btn_vision: "Notre vision",
-                hero_badge_diag_title: "Diagnostic &lt; 3s", hero_badge_diag_sub: "Intelligence Artificielle Avancée",
-                hero_badge_market_title: "Solutionneur &amp; Market", hero_badge_market_sub: "Remède prescrit + Boutique locale",
-                hero_badge_prec_title: "Précision 98.5%", hero_badge_prec_sub: "Validation agronomique certifiée",
-                hero_tab_diag: "Diagnostic", hero_tab_home: "Accueil", hero_tab_map: "Carte", hero_live_scan: "Scan IA Live",
-                stat_precision: "Précision IA", stat_losses: "Pertes Évitées", stat_diag: "Diagnostic",
+                nav_vision: "Vision",
+                nav_problem: "L'Enjeu",
+                nav_tech: "Technologie",
+                nav_benefits: "Avantages",
+                nav_features: "Fonctionnalités",
+                nav_pricing: "Tarifs",
+                nav_market: "Market",
+                nav_org_space: "Espace Organisation",
+                nav_download: "Télécharger",
+                nav_pitch: "Pitch Deck",
+                hero_title: "Le Futur de l'Agriculture est <span>Intelligent</span>.",
+                hero_desc: "Sauver les récoltes mondiales en mettant la puissance de l'IA entre les mains de chaque agriculteur. Diagnostic instantané, conseils d'experts et communauté réunie.",
+                hero_btn_discover: "Découvrir le projet",
+                hero_btn_vision: "Notre vision",
+                hero_badge_diag_title: "Diagnostic &lt; 3s",
+                hero_badge_diag_sub: "Intelligence Artificielle Avancée",
+                hero_badge_market_title: "Solutionneur &amp; Market",
+                hero_badge_market_sub: "Remède prescrit + Boutique locale",
+                hero_badge_prec_title: "Précision 98.5%",
+                hero_badge_prec_sub: "Validation agronomique certifiée",
+                hero_tab_diag: "Diagnostic",
+                hero_tab_home: "Accueil",
+                hero_tab_map: "Carte",
+                hero_live_scan: "Triple IA Scan Live",
+                stat_precision: "Précision IA",
+                stat_losses: "Pertes Évitées",
+                stat_diag: "Diagnostic",
                 prob_badge: "L'Enjeu &amp; Notre Mission",
                 prob_title: "Une Solution Stratégique face aux <span>Épidémies Agricoles</span>",
                 prob_desc: "Chaque année, plus de 40% des récoltes mondiales sont détruites par des maladies et des ravageurs non anticipés. Plantixia fournit une réponse technologique accessible et adaptée à tous les acteurs clés de la chaîne agricole :",
@@ -2120,24 +2137,134 @@
                 prob_target4_tag: "Impact &amp; Croissance",
                 prob_target4_title: "Investisseurs &amp; Partenaires",
                 prob_target4_desc: "Soutenez une infrastructure AgriTech propriétaire et scalable, répondant à un besoin vital de subsistance alimentaire tout en valorisant la donnée et l'innovation technologique de terrain.",
-                tech_title: "Excellence <span>Technologique</span>", tech_subtitle: "Une architecture d'intelligence artificielle unique pour une fiabilité inégalée.", tech_1_t: "Intelligence Artificielle Avancée", tech_1_d: "Notre technologie d'intelligence artificielle croise plusieurs algorithmes d'analyse visuelle pour éliminer les faux positifs et garantir un diagnostic précis à 98%.", tech_2_t: "Big Data Agricole", tech_2_d: "Notre base de données propriétaire apprend de chaque scan, permettant une détection prédictive des épidémies régionales.", tech_3_t: "Scalabilité Cloud", tech_3_d: "Une infrastructure légère et ultra-rapide capable de supporter des millions d'utilisateurs avec une latence minimale.",
-                ben_title: "Pourquoi <span>Plantixia</span> ?", ben_subtitle: "Des bénéfices tangibles pour transformer l'agriculture.", ben_1_t: "Gain de Temps", ben_1_d: "Obtenez un diagnostic en quelques secondes, sans attendre la visite d'un expert sur le terrain.", ben_2_t: "Réduction des Coûts", ben_2_d: "Évitez l'achat de produits inadaptés en identifiant avec précision la source du problème.", ben_3_t: "Sécurité des Récoltes", ben_3_d: "Anticipez les épidémies grâce aux alertes communautaires et protégez vos rendements.", ben_4_t: "Proximité Locale", ben_4_d: "Une interface intuitive disponible en langues locales pour une accessibilité totale.",
-                feat_title: "Fonctionnalités Clés", feat_desc: "Une suite d'outils professionnels pour maximiser vos rendements.", feat_1_t: "Scanner IA", feat_1_d: "Identifiez instantanément les maladies, parasites et carences nutritionnelles grâce à notre moteur d'intelligence artificielle.", feat_2_t: "Support Experts", feat_2_d: "Connectez-vous avec des ingénieurs agronomes certifiés pour des consultations personnalisées en temps réel.", feat_3_t: "Communauté", feat_3_d: "Partagez vos diagnostics, apprenez des autres agriculteurs et suivez l'évolution des épidémies dans votre région.", feat_4_t: "Market & Solutionneur", feat_4_d: "Accédez à notre réseau de boutiques et pharmacies agricoles pour acheter vos traitements et intrants dès qu'une maladie est détectée.",
-                price_title: "Nos <span>Licences</span> et Abonnements", price_subtitle: "Des offres adaptées à chaque besoin, du cultivateur individuel aux grandes coopératives.", price_1_t: "Individuel Mensuel", price_1_d: "Pour les particuliers et petits exploitants.", price_mo: "/mois", price_f1: "Scans illimités", price_f2: "Diagnostics instantanés par IA", price_f3: "Accès à la communauté", price_f4: "Historique des détections", price_2_t: "Individuel Annuel", price_2_d: "La solution la plus économique.", price_yr: "/an", price_2_f1: "Toutes les options mensuelles", price_2_f2: "Économisez l'équivalent d'un mois", price_2_f3: "Support prioritaire", price_2_f4: "Accès hors-ligne limité", btn_subscribe: "S'abonner", price_3_t: "Licence Entreprise", price_3_d: "Pour les coopératives et grandes exploitations.", price_3_f1: "Multi-comptes B2B gérés par admin", price_3_f2: "Panneau d'administration dédié", price_3_f3: "Suivi des activités et mouvements", price_3_f4: "Consultation avec experts agronomes", price_3_f5: "Détection prédictive régionale", btn_register: "S'inscrire",
-                app_title: "Interface Mobile", app_desc: "Un design épuré, pensé pour le terrain.",
-                surv_badge: "Plateforme Web &amp; Décideurs", surv_title: "Tableau de Bord &amp; <span>Surveillance Épidémiologique</span>", surv_desc: "Supervision nationale, cartographie des foyers d'infection en temps réel et alertes préventives ciblées pour les coopératives et décideurs.",
-                team_title: "L'Équipe", team_subtitle: "L'alliance de l'expertise technologique et de l'ingénierie agronomique.",
-                dl_title: "Prêt à <span>Transformer</span> votre Récolte ?", dl_desc: "Rejoignez la révolution Plantixia. Disponible dès maintenant pour tous les agriculteurs, gratuitement.", dl_get: "Obtenir sur", dl_direct: "Direct",
-                ftr_title: "Prêt à <span>cultiver le futur</span> ?", ftr_desc: "Rejoignez Plantixia et protégez vos récoltes tout en anticipant les éventuelles maladies agricoles avec l'intelligence de Plantixia.", ftr_avail: "Disponible sur", ftr_direct: "Directement", ftr_apk: "Télécharger APK", ftr_contact: "Nous Contacter", ftr_contact_badge: "Support &amp; Partenariats", ftr_contact_title: "Nous Contacter Directement", ftr_email_label: "Email Officiel", ftr_phone_label: "Téléphone &amp; WhatsApp", ftr_privacy: "Politique de Confidentialité", ftr_terms: "Conditions d'Utilisation", nav_details: "Détails du Projet", nav_market: "Market Agricole", ftr_rights: "&copy; 2026 Plantixia. Tous droits réservés."
+                tech_title: "Excellence <span>Technologique</span>",
+                tech_subtitle: "Une architecture multi-moteurs unique pour une fiabilité inégalée.",
+                tech_1_t: "Intelligence Artificielle Avancée",
+                tech_1_d: "Notre technologie d'intelligence artificielle croise plusieurs algorithmes d'analyse visuelle pour éliminer les faux positifs et garantir un diagnostic précis à 98%.",
+                tech_2_t: "Big Data Agricole",
+                tech_2_d: "Notre base de données propriétaire apprend de chaque scan, permettant une détection prédictive des épidémies régionales.",
+                tech_3_t: "Scalabilité Cloud",
+                tech_3_d: "Une infrastructure légère et ultra-rapide capable de supporter des millions d'utilisateurs avec une latence minimale.",
+                ben_title: "Pourquoi <span>Plantixia</span> ?",
+                ben_subtitle: "Des bénéfices tangibles pour transformer l'agriculture.",
+                ben_1_t: "Gain de Temps",
+                ben_1_d: "Obtenez un diagnostic en quelques secondes, sans attendre la visite d'un expert sur le terrain.",
+                ben_2_t: "Réduction des Coûts",
+                ben_2_d: "Évitez l'achat de produits inadaptés en identifiant avec précision la source du problème.",
+                ben_3_t: "Sécurité des Récoltes",
+                ben_3_d: "Anticipez les épidémies grâce aux alertes communautaires et protégez vos rendements.",
+                ben_4_t: "Proximité Locale",
+                ben_4_d: "Une interface intuitive disponible en langues locales pour une accessibilité totale.",
+                feat_title: "Fonctionnalités Clés",
+                feat_desc: "Une suite d'outils professionnels pour maximiser vos rendements.",
+                feat_1_t: "Scanner IA",
+                feat_1_d: "Identifiez instantanément les maladies, parasites et carences nutritionnelles grâce à notre technologie d'intelligence artificielle.",
+                feat_2_t: "Support Experts",
+                feat_2_d: "Connectez-vous avec des ingénieurs agronomes certifiés pour des consultations personnalisées en temps réel.",
+                feat_3_t: "Communauté",
+                feat_3_d: "Partagez vos diagnostics, apprenez des autres agriculteurs et suivez l'évolution des épidémies dans votre région.",
+                feat_4_t: "Market & Solutionneur",
+                feat_4_d: "Accédez à notre réseau de boutiques et pharmacies agricoles pour acheter vos traitements et intrants dès qu'une maladie est détectée.",
+                price_title: "Nos <span>Licences</span> et Abonnements",
+                price_subtitle: "Des offres adaptées à chaque besoin, du cultivateur individuel aux grandes coopératives.",
+                price_1_t: "Individuel Mensuel",
+                price_1_d: "Pour les particuliers et petits exploitants.",
+                price_mo: "/mois",
+                price_f1: "Scans illimités",
+                price_f2: "Diagnostics instantanés par IA",
+                price_f3: "Accès à la communauté",
+                price_f4: "Historique des détections",
+                btn_start: "Commencer",
+                price_2_t: "Individuel Annuel",
+                price_2_d: "La solution la plus économique.",
+                price_yr: "/an",
+                price_2_f1: "Toutes les options mensuelles",
+                price_2_f2: "Économisez l'équivalent d'un mois",
+                price_2_f3: "Support prioritaire",
+                price_2_f4: "Accès hors-ligne limité",
+                btn_subscribe: "S'abonner",
+                price_3_t: "Licence Entreprise",
+                price_3_d: "Pour les coopératives et grandes exploitations.",
+                price_from: "Dès ",
+                price_3_f1: "Multi-comptes B2B gérés par admin",
+                price_3_f2: "Panneau d'administration dédié",
+                price_3_f3: "Suivi des activités et mouvements",
+                price_3_f4: "Consultation avec experts agronomes",
+                price_3_f5: "Détection prédictive régionale",
+                btn_register: "S'inscrire",
+                app_title: "Interface Mobile",
+                app_desc: "Un design épuré, pensé pour le terrain.",
+                surv_badge: "Plateforme Web &amp; Décideurs",
+                surv_title: "Tableau de Bord &amp; <span>Surveillance Épidémiologique</span>",
+                surv_desc: "Supervision nationale, cartographie des foyers d'infection en temps réel et alertes préventives ciblées pour les coopératives et décideurs.",
+                surv_live: "Données en Direct",
+                team_title: "L'Équipe",
+                team_subtitle: "L'alliance de l'expertise technologique et de l'ingénierie agronomique.",
+                team_1_role: "Ingénieur Agronome",
+                team_1_desc: "Expert en pathologie végétale.",
+                team_2_role: "Développeur Mobile",
+                team_2_desc: "Spécialiste des modèles prédictifs basés sur l'IA.",
+                team_3_role: "Ingénieur IT & Fullstack",
+                team_3_desc: "Expert en architecture mobile et cloud.",
+                ftr_title: "Prêt à <span>cultiver le futur</span> ?",
+                ftr_desc: "Rejoignez Plantixia et protégez vos récoltes tout en anticipant les éventuelles maladies agricoles avec l'intelligence de Plantixia.",
+                ftr_avail: "Disponible sur",
+                ftr_contact_badge: "Support &amp; Partenariats",
+                ftr_contact_title: "Nous Contacter Directement",
+                ftr_email_label: "Email Officiel",
+                ftr_phone_label: "Téléphone &amp; WhatsApp",
+                ftr_market: "Market Agricole",
+                ftr_privacy: "Politique de Confidentialité",
+                ftr_terms: "Conditions d'Utilisation",
+                ftr_rights: "&copy; 2026 Plantixia. Tous droits réservés.",
+                ftr_powered: "Propulsé par Next Byte Technology",
+                dl_modal_title: "Meilleure Expérience",
+                dl_modal_desc: "Pour bénéficier des <b>mises à jour automatiques</b> et d'une sécurité maximale, nous recommandons l'installation via le Google Play Store.",
+                dl_modal_play: "Utiliser Google Play (Conseillé)",
+                dl_modal_direct: "Continuer le téléchargement direct",
+                dl_modal_cancel: "Annuler",
+                swal_req_title: "Demande de Licence Entreprise",
+                swal_req_org_lbl: "Nom de l'Organisation",
+                swal_req_org_ph: "Ex: Coopérative Kivu",
+                swal_req_email_lbl: "Email de contact",
+                swal_req_email_ph: "contact@organisation.com",
+                swal_req_phone_lbl: "Téléphone",
+                swal_req_phone_ph: "+243 ...",
+                swal_req_cancel: "Annuler",
+                swal_req_submit: "Envoyer la demande",
+                swal_req_val_err: "Veuillez remplir le nom et l'email.",
+                swal_req_sent_title: "Demande Envoyée",
+                swal_req_err_title: "Erreur",
+                swal_req_err_send: "Impossible d'envoyer la demande"
             },
             en: {
-                nav_vision: "Vision", nav_problem: "The Issue", nav_tech: "Technology", nav_benefits: "Benefits", nav_features: "Features", nav_pricing: "Pricing", nav_download: "Download", nav_pitch: "Pitch Deck",
-                hero_title: "The Future of Agriculture is <span>Intelligent</span>.", hero_desc: "Saving global harvests by putting the power of AI in the hands of every farmer. Instant diagnosis, expert advice, and a united community.", hero_btn_discover: "Discover the project", hero_btn_vision: "Our vision",
-                hero_badge_diag_title: "Diagnosis &lt; 3s", hero_badge_diag_sub: "Advanced Artificial Intelligence",
-                hero_badge_market_title: "Solutions &amp; Market", hero_badge_market_sub: "Prescribed cure + Local pharmacy",
-                hero_badge_prec_title: "98.5% Accuracy", hero_badge_prec_sub: "Certified agronomic validation",
-                hero_tab_diag: "Diagnosis", hero_tab_home: "Home", hero_tab_map: "Map", hero_live_scan: "Live AI Scan",
-                stat_precision: "AI Precision", stat_losses: "Losses Avoided", stat_diag: "Diagnosis",
+                nav_vision: "Vision",
+                nav_problem: "The Issue",
+                nav_tech: "Technology",
+                nav_benefits: "Benefits",
+                nav_features: "Features",
+                nav_pricing: "Pricing",
+                nav_market: "Market",
+                nav_org_space: "Organization Space",
+                nav_download: "Download",
+                nav_pitch: "Pitch Deck",
+                hero_title: "The Future of Agriculture is <span>Intelligent</span>.",
+                hero_desc: "Saving global harvests by putting the power of AI in the hands of every farmer. Instant diagnosis, expert advice, and a united community.",
+                hero_btn_discover: "Discover the project",
+                hero_btn_vision: "Our vision",
+                hero_badge_diag_title: "Diagnosis &lt; 3s",
+                hero_badge_diag_sub: "Advanced Artificial Intelligence",
+                hero_badge_market_title: "Solutions &amp; Market",
+                hero_badge_market_sub: "Prescribed cure + Local pharmacy",
+                hero_badge_prec_title: "98.5% Accuracy",
+                hero_badge_prec_sub: "Certified agronomic validation",
+                hero_tab_diag: "Diagnosis",
+                hero_tab_home: "Home",
+                hero_tab_map: "Map",
+                hero_live_scan: "Live Triple AI Scan",
+                stat_precision: "AI Precision",
+                stat_losses: "Losses Avoided",
+                stat_diag: "Diagnosis",
                 prob_badge: "The Challenge &amp; Our Mission",
                 prob_title: "A Strategic Solution to <span>Agricultural Epidemics</span>",
                 prob_desc: "Every year, over 40% of global harvests are destroyed by unanticipated pests and diseases. Plantixia provides an accessible, tailored technological response for every key stakeholder in the agricultural chain:",
@@ -2153,15 +2280,105 @@
                 prob_target4_tag: "Impact &amp; Growth",
                 prob_target4_title: "Investors &amp; Partners",
                 prob_target4_desc: "Back a proprietary, scalable AgriTech infrastructure solving a vital food security challenge while unlocking the value of field data and deep technology.",
-                tech_title: "Technological <span>Excellence</span>", tech_subtitle: "A unique artificial intelligence architecture for unmatched reliability.", tech_1_t: "Advanced Artificial Intelligence", tech_1_d: "Our artificial intelligence technology merges multiple visual analysis algorithms to eliminate false positives and ensure a 98% accurate diagnosis.", tech_2_t: "Agricultural Big Data", tech_2_d: "Our proprietary database learns from every scan, enabling predictive detection of regional epidemics.", tech_3_t: "Cloud Scalability", tech_3_d: "A lightweight and ultra-fast infrastructure capable of supporting millions of users with minimal latency.",
-                ben_title: "Why <span>Plantixia</span>?", ben_subtitle: "Tangible benefits to transform agriculture.", ben_1_t: "Time Saving", ben_1_d: "Get a diagnosis in seconds, without waiting for an expert's field visit.", ben_2_t: "Cost Reduction", ben_2_d: "Avoid purchasing inappropriate products by accurately identifying the source of the problem.", ben_3_t: "Harvest Security", ben_3_d: "Anticipate epidemics with community alerts and protect your yields.", ben_4_t: "Local Proximity", ben_4_d: "An intuitive interface available in local languages for total accessibility.",
-                feat_title: "Key Features", feat_desc: "A suite of professional tools to maximize your yields.", feat_1_t: "AI Scanner", feat_1_d: "Instantly identify diseases, pests, and nutritional deficiencies with our artificial intelligence engine.", feat_2_t: "Expert Support", feat_2_d: "Connect with certified agronomists for personalized real-time consultations.", feat_3_t: "Community", feat_3_d: "Share your diagnoses, learn from other farmers, and track the evolution of epidemics in your region.", feat_4_t: "Market & Solutions", feat_4_d: "Access our network of agricultural stores and pharmacies to buy your treatments and inputs as soon as a disease is detected.",
-                price_title: "Our <span>Licenses</span> and Subscriptions", price_subtitle: "Offers tailored to every need, from the individual grower to large cooperatives.", price_1_t: "Individual Monthly", price_1_d: "For individuals and smallholders.", price_mo: "/month", price_f1: "Unlimited scans", price_f2: "Instant AI diagnostics", price_f3: "Community access", price_f4: "Detection history", price_2_t: "Individual Annual", price_2_d: "The most economical solution.", price_yr: "/year", price_2_f1: "All monthly options", price_2_f2: "Save the equivalent of one month", price_2_f3: "Priority support", price_2_f4: "Limited offline access", btn_subscribe: "Subscribe", price_3_t: "Enterprise License", price_3_d: "For cooperatives and large farms.", price_3_f1: "Multi-B2B accounts managed by admin", price_3_f2: "Dedicated administration panel", price_3_f3: "Tracking activities and movements", price_3_f4: "Consultation with agronomic experts", price_3_f5: "Predictive regional detection", btn_register: "Register",
-                app_title: "Mobile Interface", app_desc: "A sleek design, built for the field.",
-                surv_badge: "Web Platform &amp; Policymakers", surv_title: "Dashboard &amp; <span>Epidemiological Surveillance</span>", surv_desc: "National monitoring, real-time infection outbreak mapping, and targeted preventative alerts for cooperatives and decision-makers.",
-                team_title: "The Team", team_subtitle: "The alliance of technological expertise and agronomic engineering.",
-                dl_title: "Ready to <span>Transform</span> your Harvest?", dl_desc: "Join the Plantixia revolution. Available now for all farmers, for free.", dl_get: "Get it on", dl_direct: "Direct",
-                ftr_title: "Ready to <span>cultivate the future</span>?", ftr_desc: "Join Plantixia and protect your crops while anticipating potential agricultural diseases with Plantixia's intelligence.", ftr_avail: "Available on", ftr_direct: "Directly", ftr_apk: "Download APK", ftr_contact: "Contact Us", ftr_contact_badge: "Support &amp; Partnerships", ftr_contact_title: "Contact Our Team Directly", ftr_email_label: "Official Email", ftr_phone_label: "Phone &amp; WhatsApp", ftr_privacy: "Privacy Policy", ftr_terms: "Terms of Use", nav_details: "Project Details", nav_market: "Agricultural Market", ftr_rights: "&copy; 2026 Plantixia. All rights reserved."
+                tech_title: "Technological <span>Excellence</span>",
+                tech_subtitle: "A unique multi-engine architecture for unmatched reliability.",
+                tech_1_t: "Advanced Artificial Intelligence",
+                tech_1_d: "Our artificial intelligence technology merges multiple visual analysis algorithms to eliminate false positives and ensure a 98% accurate diagnosis.",
+                tech_2_t: "Agricultural Big Data",
+                tech_2_d: "Our proprietary database learns from every scan, enabling predictive detection of regional epidemics.",
+                tech_3_t: "Cloud Scalability",
+                tech_3_d: "A lightweight and ultra-fast infrastructure capable of supporting millions of users with minimal latency.",
+                ben_title: "Why <span>Plantixia</span>?",
+                ben_subtitle: "Tangible benefits to transform agriculture.",
+                ben_1_t: "Time Saving",
+                ben_1_d: "Get a diagnosis in seconds, without waiting for an expert's field visit.",
+                ben_2_t: "Cost Reduction",
+                ben_2_d: "Avoid purchasing inappropriate products by accurately identifying the source of the problem.",
+                ben_3_t: "Harvest Security",
+                ben_3_d: "Anticipate epidemics with community alerts and protect your yields.",
+                ben_4_t: "Local Proximity",
+                ben_4_d: "An intuitive interface available in local languages for total accessibility.",
+                feat_title: "Key Features",
+                feat_desc: "A suite of professional tools to maximize your yields.",
+                feat_1_t: "AI Scanner",
+                feat_1_d: "Instantly identify diseases, pests, and nutritional deficiencies with our artificial intelligence technology.",
+                feat_2_t: "Expert Support",
+                feat_2_d: "Connect with certified agronomists for personalized real-time consultations.",
+                feat_3_t: "Community",
+                feat_3_d: "Share your diagnoses, learn from other farmers, and track the evolution of epidemics in your region.",
+                feat_4_t: "Market & Solutions",
+                feat_4_d: "Access our network of agricultural stores and pharmacies to buy your treatments and inputs as soon as a disease is detected.",
+                price_title: "Our <span>Licenses</span> and Subscriptions",
+                price_subtitle: "Offers tailored to every need, from the individual grower to large cooperatives.",
+                price_1_t: "Individual Monthly",
+                price_1_d: "For individuals and smallholders.",
+                price_mo: "/month",
+                price_f1: "Unlimited scans",
+                price_f2: "Instant AI diagnostics",
+                price_f3: "Community access",
+                price_f4: "Detection history",
+                btn_start: "Get Started",
+                price_2_t: "Individual Annual",
+                price_2_d: "The most economical solution.",
+                price_yr: "/year",
+                price_2_f1: "All monthly options",
+                price_2_f2: "Save the equivalent of one month",
+                price_2_f3: "Priority support",
+                price_2_f4: "Limited offline access",
+                btn_subscribe: "Subscribe",
+                price_3_t: "Enterprise License",
+                price_3_d: "For cooperatives and large farms.",
+                price_from: "From ",
+                price_3_f1: "Multi-B2B accounts managed by admin",
+                price_3_f2: "Dedicated administration panel",
+                price_3_f3: "Tracking activities and movements",
+                price_3_f4: "Consultation with agronomic experts",
+                price_3_f5: "Predictive regional detection",
+                btn_register: "Register",
+                app_title: "Mobile Interface",
+                app_desc: "A sleek design, built for the field.",
+                surv_badge: "Web Platform &amp; Policymakers",
+                surv_title: "Dashboard &amp; <span>Epidemiological Surveillance</span>",
+                surv_desc: "National monitoring, real-time infection outbreak mapping, and targeted preventative alerts for cooperatives and decision-makers.",
+                surv_live: "Live Data",
+                team_title: "The Team",
+                team_subtitle: "The alliance of technological expertise and agronomic engineering.",
+                team_1_role: "Agronomist Engineer",
+                team_1_desc: "Plant pathology expert.",
+                team_2_role: "Mobile Developer",
+                team_2_desc: "Specialist in AI-based predictive models.",
+                team_3_role: "IT & Fullstack Engineer",
+                team_3_desc: "Expert in mobile and cloud architecture.",
+                ftr_title: "Ready to <span>cultivate the future</span>?",
+                ftr_desc: "Join Plantixia and protect your crops while anticipating potential agricultural diseases with Plantixia's intelligence.",
+                ftr_avail: "Available on",
+                ftr_contact_badge: "Support &amp; Partnerships",
+                ftr_contact_title: "Contact Our Team Directly",
+                ftr_email_label: "Official Email",
+                ftr_phone_label: "Phone &amp; WhatsApp",
+                ftr_market: "Agricultural Market",
+                ftr_privacy: "Privacy Policy",
+                ftr_terms: "Terms of Use",
+                ftr_rights: "&copy; 2026 Plantixia. All rights reserved.",
+                ftr_powered: "Powered by Next Byte Technology",
+                dl_modal_title: "Best Experience",
+                dl_modal_desc: "To enjoy <b>automatic updates</b> and maximum security, we recommend installing via Google Play Store.",
+                dl_modal_play: "Use Google Play (Recommended)",
+                dl_modal_direct: "Continue direct download",
+                dl_modal_cancel: "Cancel",
+                swal_req_title: "Enterprise License Request",
+                swal_req_org_lbl: "Organization Name",
+                swal_req_org_ph: "E.g.: Kivu Cooperative",
+                swal_req_email_lbl: "Contact Email",
+                swal_req_email_ph: "contact@organization.com",
+                swal_req_phone_lbl: "Phone",
+                swal_req_phone_ph: "+243 ...",
+                swal_req_cancel: "Cancel",
+                swal_req_submit: "Submit Request",
+                swal_req_val_err: "Please fill in the name and email.",
+                swal_req_sent_title: "Request Sent",
+                swal_req_err_title: "Error",
+                swal_req_err_send: "Unable to submit request"
             }
         };
 
@@ -2202,6 +2419,7 @@
         }
 
         function applyLanguage(lang) {
+            document.documentElement.lang = lang;
             const lt = document.getElementById('lang-toggle');
             if (lt) lt.innerText = lang === 'fr' ? 'EN' : 'FR';
             const els = document.querySelectorAll('[data-i18n]');
@@ -2213,6 +2431,7 @@
             });
             currentLang = lang;
             localStorage.setItem('plantixia_lang', lang);
+            if (typeof lucide !== 'undefined') lucide.createIcons();
         }
 
         function toggleLanguage() {
@@ -2334,34 +2553,35 @@
 
         // Demande B2B Logic
         function openRequestModal() {
+            const t = translations[currentLang] || translations.fr;
             Swal.fire({
-                title: 'Demande de Licence Entreprise',
+                title: t.swal_req_title,
                 html: `
                     <div style="text-align: left; margin-bottom: 1rem;">
-                        <label style="color: #64748B; font-size: 0.85rem;">Nom de l'Organisation</label>
-                        <input id="swal-req-org" class="swal2-input" placeholder="Ex: Coopérative Kivu" style="width: 100%; margin: 0.5rem 0;">
+                        <label style="color: #64748B; font-size: 0.85rem;">${t.swal_req_org_lbl}</label>
+                        <input id="swal-req-org" class="swal2-input" placeholder="${t.swal_req_org_ph}" style="width: 100%; margin: 0.5rem 0;">
                     </div>
                     <div style="text-align: left; margin-bottom: 1rem;">
-                        <label style="color: #64748B; font-size: 0.85rem;">Email de contact</label>
-                        <input id="swal-req-email" type="email" class="swal2-input" placeholder="contact@organisation.com" style="width: 100%; margin: 0.5rem 0;">
+                        <label style="color: #64748B; font-size: 0.85rem;">${t.swal_req_email_lbl}</label>
+                        <input id="swal-req-email" type="email" class="swal2-input" placeholder="${t.swal_req_email_ph}" style="width: 100%; margin: 0.5rem 0;">
                     </div>
                     <div style="text-align: left; margin-bottom: 1rem;">
-                        <label style="color: #64748B; font-size: 0.85rem;">Téléphone</label>
-                        <input id="swal-req-phone" type="text" class="swal2-input" placeholder="+243 ..." style="width: 100%; margin: 0.5rem 0;">
+                        <label style="color: #64748B; font-size: 0.85rem;">${t.swal_req_phone_lbl}</label>
+                        <input id="swal-req-phone" type="text" class="swal2-input" placeholder="${t.swal_req_phone_ph}" style="width: 100%; margin: 0.5rem 0;">
                     </div>
                 `,
                 focusConfirm: false,
                 confirmButtonColor: '#10B981',
                 showCancelButton: true,
-                cancelButtonText: 'Annuler',
-                confirmButtonText: 'Envoyer la demande',
+                cancelButtonText: t.swal_req_cancel,
+                confirmButtonText: t.swal_req_submit,
                 preConfirm: () => {
                     const org_name = document.getElementById('swal-req-org').value;
                     const contact_email = document.getElementById('swal-req-email').value;
                     const contact_phone = document.getElementById('swal-req-phone').value;
 
                     if (!org_name || !contact_email) {
-                        Swal.showValidationMessage("Veuillez remplir le nom et l'email.");
+                        Swal.showValidationMessage(t.swal_req_val_err);
                         return false;
                     }
                     return { org_name, contact_email, contact_phone };
@@ -2377,16 +2597,16 @@
                         const json = await res.json();
                         if (json.status === 'success') {
                             Swal.fire({
-                                title: 'Demande Envoyée',
+                                title: t.swal_req_sent_title,
                                 text: json.message,
                                 icon: 'success',
                                 confirmButtonColor: '#10B981'
                             });
                         } else {
-                            Swal.fire('Erreur', json.message, 'error');
+                            Swal.fire(t.swal_req_err_title, json.message, 'error');
                         }
                     } catch (e) {
-                        Swal.fire('Erreur', "Impossible d'envoyer la demande", 'error');
+                        Swal.fire(t.swal_req_err_title, t.swal_req_err_send, 'error');
                     }
                 }
             });
